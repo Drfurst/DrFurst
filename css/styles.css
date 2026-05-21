@@ -515,48 +515,289 @@ section {
   color: #211f1b;
   line-height: 1.6;
 }
-.accomplishments-card { background: #1c79a2; border-radius: 40px; padding: 48px; }
-@media (max-width: 767px) { .accomplishments-card { padding: 32px 24px; border-radius: 24px; } }
-.accomplishments-card .section-title h2 { color: #fff; }
-.accomplishments-card .section-title p { color: rgba(255,255,255,0.9); }
-.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-@media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-.stat-card { background: rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; text-align: center; color: #fff; }
-.stat-card .stat-num { font-size: 2.5rem; font-weight: 700; margin-bottom: 8px; }
-.stat-card .stat-label { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
-.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (min-width: 768px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
-.gallery-grid img { width: 100%; height: 192px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-@media (min-width: 768px) { .gallery-grid img { height: 256px; } }
-.scholars-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-@media (min-width: 640px) { .scholars-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1024px) { .scholars-grid { grid-template-columns: repeat(3, 1fr); } }
-.scholar-card { background: #fff; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
-.scholar-card img { width: 100%; height: 224px; object-fit: cover; display: block; }
-.scholar-info { padding: 24px; }
-.scholar-info .year { font-size: 0.85rem; font-weight: 700; color: #211f1b; margin-bottom: 8px; }
-.scholar-info h3 { font-size: 1.5rem; font-weight: 400; color: #211f1b; margin-bottom: 16px; }
-.scholar-info .meta { font-size: 0.85rem; color: #928673; line-height: 1.8; }
-.pub-list { display: flex; flex-direction: column; gap: 16px; }
-.pub-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: box-shadow 0.2s; display: flex; flex-direction: column; gap: 16px; }
-.pub-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-@media (min-width: 768px) { .pub-card { flex-direction: row; align-items: center; } }
-.pub-year { color: #1c79a2; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
-.pub-info { flex-grow: 1; }
-.pub-info h3 { font-weight: 700; color: #211f1b; margin-bottom: 4px; }
-.pub-info p { font-size: 0.85rem; color: #928673; }
-.testimonial-card { background: #fff; border-radius: 16px; box-shadow: 0 0 50px rgba(0,0,0,0.12); padding: 48px; max-width: 800px; margin: 0 auto; }
-.quote-mark { font-size: 4rem; color: #edf7fa; line-height: 1; margin-bottom: 24px; }
-.testimonial-card blockquote { font-size: 1.25rem; font-style: italic; color: #211f1b; line-height: 1.7; margin-bottom: 24px; }
-.testimonial-author p:first-child { font-weight: 700; font-size: 1.1rem; color: #211f1b; }
-.testimonial-author p:last-child { color: #1c79a2; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; }
-footer { background: #1c79a2; color: #fff; padding: 48px 16px; }
-.footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1152px; margin: 0 auto; padding-bottom: 32px; }
-@media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-.footer-grid h3 { font-weight: 700; font-size: 1rem; margin-bottom: 16px; }
-.footer-grid p { font-size: 0.85rem; line-height: 1.7; }
-.footer-grid ul { list-style: none; }
-.footer-grid li { margin-bottom: 8px; font-size: 0.85rem; }
-.footer-grid a { color: #fff; text-decoration: none; }
-.footer-grid a:hover { text-decoration: underline; }
-.footer-bottom { max-width: 1152px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 24px; text-align: center; font-size: 0.85rem; }
+/* Accomplishments Section */
+.accomplishments-card {
+  background: #1c79a2;
+  border-radius: 40px;
+  padding: 48px;
+}
+
+@media (max-width: 767px) {
+  .accomplishments-card {
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+}
+
+.accomplishments-card .section-title h2 {
+  color: #fff;
+}
+
+.accomplishments-card .section-title p {
+  color: rgba(255,255,255,0.9);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.stat-card .stat-num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .gallery-grid img {
+    height: 256px;
+  }
+}
+
+/* Scholars Section */
+.scholars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .scholars-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scholars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.scholar-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.scholar-card img {
+  width: 100%;
+  height: 224px;
+  object-fit: cover;
+  display: block;
+}
+
+.scholar-info {
+  padding: 24px;
+}
+
+.scholar-info .year {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #211f1b;
+  margin-bottom: 8px;
+}
+
+.scholar-info h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #211f1b;
+  margin-bottom: 16px;
+}
+
+.scholar-info .meta {
+  font-size: 0.85rem;
+  color: #928673;
+  line-height: 1.8;
+}
+
+/* Publications Section */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pub-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pub-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .pub-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.pub-year {
+  color: #1c79a2;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.pub-info {
+  flex-grow: 1;
+}
+
+.pub-info h3 {
+  font-weight: 700;
+  color: #211f1b;
+  margin-bottom: 4px;
+}
+
+.pub-info p {
+  font-size: 0.85rem;
+  color: #928673;
+}
+
+/* Testimonials Section */
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.12);
+  padding: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  color: #edf7fa;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.testimonial-card blockquote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #211f1b;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.testimonial-author p:first-child {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #211f1b;
+}
+
+.testimonial-author p:last-child {
+  color: #1c79a2;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+  background: #1c79a2;
+  color: #fff;
+  padding: 48px 16px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-grid h3 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.footer-grid p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.footer-grid ul {
+  list-style: none;
+}
+
+.footer-grid li {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.footer-grid a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1152px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+}
