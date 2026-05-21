@@ -569,32 +569,6 @@ section {
   font-weight: 700;
 }
 
-/* Gallery Section */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 192px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-@media (min-width: 768px) {
-  .gallery-grid img {
-    height: 256px;
-  }
-}
 
 /* Scholars Section */
 .scholars-grid {
@@ -800,4 +774,195 @@ footer {
   padding-top: 24px;
   text-align: center;
   font-size: 0.85rem;
+}
+
+/* ══════════════════════════════
+   gallery.css
+   A Life in Pictures — Tab Gallery
+   Colors: #1C79A2 (teal), #211F1B (black),
+           #928673 (brown), #F5F5F0 (warm-bg)
+   Font: Be Vietnam Pro
+══════════════════════════════ */
+
+/* ── Section wrapper ── */
+.gallery-section {
+  background: #ffffff;
+  padding: 4rem 2rem 5rem;
+}
+
+.gallery-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Title & intro ── */
+.gallery-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #211F1B;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.gallery-intro {
+  text-align: center;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.85rem;
+  color: #928673;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* ── Tab bar container ── */
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.75rem;
+
+  /* Pill container background */
+  background: #F5F5F0;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.00);
+  padding: 6px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Individual tab button ── */
+.gallery-tab {
+  display: flex;
+  padding: 12px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+
+  /* Default (inactive) state */
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.00);
+  box-shadow: none;
+
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #211F1B;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.gallery-tab:hover:not(.active) {
+  background: rgba(28, 121, 162, 0.08);
+  color: #1C79A2;
+}
+
+/* ── Active tab ── */
+.gallery-tab.active {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.00);
+  background: #1C79A2;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ── Grid wrapper ── */
+.gallery-grid {
+  position: relative;
+}
+
+/* ── Tab panels ── */
+.gallery-panel {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  animation: galleryFadeIn 0.3s ease;
+}
+
+.gallery-panel.active {
+  display: grid;
+}
+
+@keyframes galleryFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Individual image cards ── */
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #E8E6E0;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Placeholder checkerboard when no image loads */
+.gallery-item img[src=""],
+.gallery-item img:not([src]) {
+  opacity: 0;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, #ddd 25%, transparent 25%),
+    linear-gradient(-45deg, #ddd 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ddd 75%),
+    linear-gradient(-45deg, transparent 75%, #ddd 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: #e8e6e0;
+  z-index: 0;
+}
+
+.gallery-item img {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .gallery-tabs {
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .gallery-tab {
+    padding: 8px 12px;
+    font-size: 0.76rem;
+    flex: 1;
+    text-align: center;
+  }
+
+  .gallery-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+  }
+
+  .gallery-title {
+    font-size: 1.5rem;
+  }
 }
