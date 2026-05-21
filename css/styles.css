@@ -29,7 +29,7 @@ nav a:hover { color: #1c79a2; }
 .film-scroll-mobile { display: flex; width: max-content; height: 110px; gap: 10px; animation: filmScroll 22s linear infinite; will-change: transform; }
 .film-scroll-mobile img { flex-shrink: 0; width: 140px; height: 110px; object-fit: cover; object-position: top center; border-radius: 8px; }
 section { padding: 48px 16px; }
-@media (min-width: 768px) { section { padding: 64px 16px; } }
+@media (min-width: 768px) { section { padding: 0px 50px; } }
 .container { max-width: 1152px; margin: 0 auto; }
 .section-title { text-align: center; margin-bottom: 48px; }
 .section-title h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 16px; }
