@@ -30,7 +30,7 @@ $(document).ready(function () {
     swipe:          true,
     touchMove:      true,
     infinite:       true,       /* true infinite — no jump */
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     waitForAnimate: true,       /* prevent double-click skip */
 
     /* Use your existing prev/next buttons */

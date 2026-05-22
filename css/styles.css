@@ -1098,24 +1098,47 @@ footer {
    SLICK OVERRIDES
 ══════════════════════════════ */
 
-/* Hide Slick's default arrows (we use custom buttons) */
-.slick-prev, .slick-next { display: none !important; }
+/* Hide Slick's default arrows */
+.slick-prev,
+.slick-next { display: none !important; }
 
-/* Hide dots entirely */
+/* Hide dots */
 .slick-dots { display: none !important; }
 
-/* Prevent layout shift during init */
-.testimonials-track { min-height: 200px; }
+/* ── Core slider fix — prevent height collapse ── */
+.testimonials-container { overflow: hidden; }
 
-/* Each slide takes full width */
-.testimonial-slide { outline: none; }
+.testimonials-track {
+  /* Let Slick control display/transform — don't override */
+}
 
-/* Smooth equal-height slides */
-.slick-track { display: flex !important; align-items: stretch; }
-.slick-slide { height: auto; }
-.slick-slide > div { height: 100%; }
-.testimonial-slide { height: 100%; display: flex !important; }
-.testimonial-card { flex: 1; }
+/* Each slide fills full width, auto height */
+.slick-list { overflow: hidden; }
+
+.slick-track {
+  display: block !important;  /* override flex — causes collapse */
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: auto;
+  min-height: 1px;
+}
+
+.slick-slide.slick-active { display: block; }
+
+.slick-slide > div { display: block; }
+
+.testimonial-slide {
+  display: block !important;
+  width: 100%;
+}
+
+.testimonial-card {
+  display: block;
+  width: 100%;
+}
 
 /* ── Nav buttons — no background, blue chevrons only ── */
 .testimonials-nav {
@@ -1127,8 +1150,12 @@ footer {
 }
 
 .testimonials-btn {
-  background: none;
-  border: none;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
   padding: 8px;
   color: #1c79a2;
   cursor: pointer;
@@ -1136,17 +1163,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
-  border-radius: 0;
-  width: auto;
-  height: auto;
 }
 
 .testimonials-btn:hover {
+  background: none !important;
+  box-shadow: none !important;
   color: #155a7a;
   transform: scale(1.2);
-  background: none;
-  box-shadow: none;
 }
 
 .testimonials-btn:active { transform: scale(0.95); }
