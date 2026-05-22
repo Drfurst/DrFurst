@@ -244,6 +244,21 @@ section {
   }
 }
 
+/* Add padding top and bottom to all sections starting from A Life of Discovery */
+#timeline,
+#timeline ~ section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  #timeline,
+  #timeline ~ section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
 .container {
   max-width: 1152px;
   margin: 0 auto;
