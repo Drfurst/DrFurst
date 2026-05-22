@@ -699,6 +699,9 @@ section {
   max-width: 900px;
   margin: 0 auto;
 }
+testimonial-slide{
+  margin-bottom: 20px;
+}
 
 .testimonials-container {
   overflow: hidden;
