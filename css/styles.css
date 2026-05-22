@@ -1108,47 +1108,13 @@ footer {
    SLICK OVERRIDES
 ══════════════════════════════ */
 
-/* Hide Slick's default arrows */
+//* ══ SLICK OVERRIDES ══ */
 .slick-prev,
 .slick-next { display: none !important; }
 
-/* Hide dots */
 .slick-dots { display: none !important; }
 
-/* ── Core slider fix — prevent height collapse ── */
-.testimonials-container { overflow: hidden; }
-
-.testimonials-track {
-  /* Let Slick control display/transform — don't override */
-}
-
-/* Each slide fills full width, auto height */
-.slick-list { overflow: hidden; }
-
-.slick-track {
-  display: block !important;  /* override flex — causes collapse */
-}
-
-.slick-slide {
-  display: none;
-  float: left;
-  height: auto;
-  min-height: 1px;
-}
-
-.slick-slide.slick-active { display: block; }
-
-.slick-slide > div { display: block; }
-
-.testimonial-slide {
-  display: block !important;
-  width: 100%;
-}
-
-.testimonial-card {
-  display: block;
-  width: 100%;
-}
+.testimonials-track { will-change: transform; }
 
 /* ── Nav buttons — no background, blue chevrons only ── */
 .testimonials-nav {
