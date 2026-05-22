@@ -16,43 +16,40 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 /* ── 2. Slick Testimonials Slider ── */
 $(document).ready(function () {
 
-  $('.testimonials-track').slick({
+  var $track = $('.testimonials-track');
+
+  $track.slick({
     slidesToShow:   1,
     slidesToScroll: 1,
     autoplay:       true,
     autoplaySpeed:  8000,
-    speed:          800,        /* smooth transition speed */
+    speed:          800,
     fade:           false,
     cssEase:        'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
-    arrows:         true,
-    dots:           false,      /* no dots */
+    arrows:         false,   /* ← disable built-in arrows entirely */
+    dots:           false,
     draggable:      true,
     swipe:          true,
     touchMove:      true,
-    infinite:       true,       /* true infinite — no jump */
+    infinite:       true,
     adaptiveHeight: false,
-    waitForAnimate: true,       /* prevent double-click skip */
+    waitForAnimate: true,
+  });
 
-    /* Use your existing prev/next buttons */
-    prevArrow: $('#testimonials-prev'),
-    nextArrow: $('#testimonials-next'),
+  /* Wire your custom buttons manually */
+  $('#testimonials-prev').on('click', function () {
+    $track.slick('slickPrev');
+  });
 
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: true,
-          dots:   false
-        }
-      }
-    ]
+  $('#testimonials-next').on('click', function () {
+    $track.slick('slickNext');
   });
 
   /* Pause on hover */
   $('.testimonials-slider').on('mouseenter', function () {
-    $('.testimonials-track').slick('slickPause');
+    $track.slick('slickPause');
   }).on('mouseleave', function () {
-    $('.testimonials-track').slick('slickPlay');
+    $track.slick('slickPlay');
   });
 
 });
@@ -71,7 +68,6 @@ $(document).ready(function () {
       tab.addEventListener('click', function () {
         var target = tab.getAttribute('data-tab');
 
-        /* Update tabs */
         tabs.forEach(function (t) {
           t.classList.remove('active');
           t.setAttribute('aria-selected', 'false');
@@ -79,7 +75,6 @@ $(document).ready(function () {
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
 
-        /* Update panels */
         panels.forEach(function (panel) {
           panel.classList.toggle('active', panel.getAttribute('data-panel') === target);
         });
