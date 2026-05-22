@@ -1093,3 +1093,51 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* ══════════════════════════════
+   SLICK OVERRIDES
+   Add these at the bottom of styles.css
+══════════════════════════════ */
+
+/* Hide Slick's default arrows (we use custom buttons) */
+.slick-prev, .slick-next { display: none !important; }
+
+/* Dots container — Slick renders inside #testimonials-dots */
+.slick-dots {
+  display: flex !important;
+  gap: 8px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li { margin: 0; }
+
+.slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0; /* hide default Slick dot number */
+  transition: background 0.25s, transform 0.25s;
+}
+
+.slick-dots li button:hover { background: #928673; transform: scale(1.1); }
+.slick-dots li.slick-active button { background: #1c79a2; transform: scale(1.2); }
+
+/* Prevent layout shift during init */
+.testimonials-track { min-height: 200px; }
+
+/* Each slide takes full width */
+.testimonial-slide { outline: none; }
+
+/* Override Slick's inline display:block on slides */
+.slick-slide { height: auto; }
+.slick-track { display: flex !important; align-items: stretch; }
+.slick-slide > div { height: 100%; }
+.testimonial-slide { height: 100%; display: flex !important; }
+.testimonial-card { flex: 1; }

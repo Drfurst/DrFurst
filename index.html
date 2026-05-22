@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Arthur Furst &mdash; A Life of Discovery</title>
   <link rel="stylesheet" href="css/styles.css">
+  <!-- jQuery (required for Slick Slider) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Slick Slider CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -307,233 +309,129 @@
   </section>
 
   <!-- Testimonials Slider -->
-  <section id="testimonials" style="background:#fff;">
+  <section id="testimonials" style="background:#fff; padding: 48px 16px;">
     <div class="container">
-      <div class="section-title"><h2 style="color:#1c79a2;">Voices &amp; Memories</h2><p>Colleagues and friends remember Dr. Furst's profound impact on science and lives</p></div>
+
+      <div class="section-title">
+        <h2 style="color:#1c79a2;">Voices &amp; Memories</h2>
+        <p>Colleagues and friends remember Dr. Furst's profound impact on science and lives</p>
+      </div>
 
       <div class="testimonials-slider">
-        <div class="testimonials-container">
-          <div class="testimonials-track" id="testimonials-track">
 
-            <!-- Testimonial 1 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>As I think back over the years, there are few relationships that have had such a powerful effect on me and GNLD as our relationship with Dr. Furst. What an example he has been to each and every one of us. What a blessing it has been to have him with us all these years. What a legacy he has given us. I will be forever grateful for his contributions to my personal health and that of so many thousands of other people around the world. We will always remember him with love and appreciation.</blockquote>
-                <div class="testimonial-author"><p>Jerry Brassfield</p><p>GNLD</p></div>
-              </div>
+        <!-- TRACK — Slick targets this element -->
+        <div class="testimonials-track" id="testimonials-track">
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>As I think back over the years, there are few relationships that have had such a powerful effect on me and GNLD as our relationship with Dr. Furst. What an example he has been to each and every one of us. What a blessing it has been to have him with us all these years. What a legacy he has given us. I will be forever grateful for his contributions to my personal health and that of so many thousands of other people around the world. We will always remember him with love and appreciation.</blockquote>
+              <div class="testimonial-author"><p>Jerry Brassfield</p><p>GNLD</p></div>
             </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>What an incredible privilege it has been to have one of the greatest minds of our time dedicated to GNLD and the development of our products. We will always be indebted-and forever thankful-for Dr. Furst's contributions; contributions that will continue to impact the lives of thousands of people for many years to come. Dr. Furst was an excellent example of the GNLD way of life, too, remaining healthy and vibrant for all of his life. Arthur's wonderful understanding and gentle nature will be sorely missed by all of his friends and colleagues. Rest in peace, dear friend</blockquote>
-                <div class="testimonial-author"><p>Roget Uys</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Through his focus on nutrition as a base for good health, Dr. Furst touched the lives of so many people throughout this world. Art's endorsement alone has not only provided me personally with conviction to use our products with confidence, but also to give them to my family as a vital part of their daily lives. We will miss him dearly, but we go forward knowing the world is a better place due to his contributions to us all!</blockquote>
-                <div class="testimonial-author"><p>Dan Lewis</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>It has been a great privilege knowing Dr. Furst. We've been blessed by his brilliant mind as well as his fun-loving personality. He will truly be missed by us all.</blockquote>
-                <div class="testimonial-author"><p>George Casale</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 5 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>The first time I met Art was in the late 1980s, when I was the Director of the Annual Fund here at USF. I remember being at a dinner given in honor of USD's President's Ambassadors and I was seated next to Art. Sometimes at these dinners, it's hard to find interesting topics of conversation with one's dinner companions. Not the case with Art Furst! Within the first five minutes, he was regaling me with his exploits and the adventures both in the scientific community and in his varied personal interests. I have a clear memory of him telling me about his long-standing interest in folk dancing, and then getting out of his chair and demonstrating a very tricky Greek folk dance movement wherein the dancers get down in a crouch and kick each leg straight out in a rapid fashion. Art must have been in his late sixties or early seventies at the time, and he was as limber and strong as any dancer I've seen! I bet Art is folk dancing in heaven, and keeping all the other souls tuned into the latest scientific discoveries!</blockquote>
-                <div class="testimonial-author"><p>Sally Dalton</p><p>Associate VP, Development, University of San Francisco</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 6 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>We appreciated Dr. Furst's vast knowledge and his ability to convey it to the average person. He also had an open, friendly personality and the ability to mix well. We will always remember him performing a five-minute Greek dance at one of our GNLD social events- when he was in his early eighties! He did use his life so that the use of his life will outlive his life.</blockquote>
-                <div class="testimonial-author"><p>Jerry & EmmaJo Krause</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 7 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Dr. Furst has been an inspiration-as a scientist and as a person-for his kindness and humanity. As do all great scientists, Dr. Furst used his great intellect to pursue his research, bringing different fields together to make a whole that would have an impact on correct scientific understanding and, ultimately, on the lives of many individuals. As a pioneer in the areas of cancer treatment, toxicology, and nutrition, he persisted in his convictions and ideas in spite of resistance—and was eventually proven correct! Dr. Furst was a prolific author and lecturer, taking time to teach, explain, and coach students and experts alike, and never hesitating to give advice when asked. Although he became renowned, humility characterized his manner. He was generous, gentle and caring. He was also full of life, with love and concern for people. He was just as comfortable with a joke to lift the spirits or a question that could stump the most articulate speaker. I feel honored to have served with him on GNLD's Scientific Advisory Board.</blockquote>
-                <div class="testimonial-author"><p>Dr. Arianna Carughi</p><p>Scientific Advisory Board</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 8 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>I knew Arthur Furst for over 30 years as a friend and professional colleague. We were fellow toxicologists and served together on numerous boards and scientific societies. He was well respected by his peers. I shall miss him.</blockquote>
-                <div class="testimonial-author"><p>Dr. Gordon Newell</p><p>Fellow Toxicologist</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 9 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Arthur Furst was a great friend of the Stanford Health Library from the time his wife, Florence Furst, joined as a volunteer in 1989. When Florence died suddenly, Art started a memorial fund in her honor, which was dedicated to supporting emerging information technologies that could be used in the Health Library. With help from the Florence Furst Fund, we began experimenting with a new part of the Internet called the World Wide Web, and through a partnership with Stanford Medical School, the Health Library had the very first Web site for Stanford Hospital! Art was delighted, and he encouraged us to continue to grow that resource as the Web grew. Art believed that if people had access to the right information, they would be able to make better choices about their lifestyle and health care, just as he had done. He modeled for all of us the value of applied information-he found things he loved doing, like folk dancing, and he did them well into his later years. He enjoyed good food, and his diet reflected what he knew to be healthful foods- yet he always left room for his beloved ice cream milkshakes. We often talked about his newest work while at the Peninsula Creamery with a milkshake in front of him. Art was a man who demonstrated on a daily basis that finding a passion in life and following it creates not just a more meaningful life, but a longer and healthier one, as well. We enjoyed his presence and in a way, we forgot how old he was, assuming that if anyone could go on forever, it'd be Art. He gave Stanford Health Library financial support and encouragement, but he also gave those of us who knew him much more. We will miss Arthur Furst.</blockquote>
-                <div class="testimonial-author"><p>Nora Cain</p><p>Director, Stanford Health Library</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 10 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Dr. Furst was one of the most brilliant scholars of our time. To know him was to love him. He had a great sense of humor; he was a wonderful dancer; and he was a real humanitarian and friend. He always had time for you, too, with a twinkle in his eye and a kind thing to say. He was one of God's angels, and we will all miss him.</blockquote>
-                <div class="testimonial-author"><p>JoAnn & Norvel Martens</p><p>Friends</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 11 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>During the past 14 years, I had the privilege to be associated with Arthur, enjoying his warm friendship and, most of all, learning from his long and highly valuable experience in toxicology and human nutrition. Our relationship started several years after he retired from his distinguished academic career. His valuable contributions after retirement remained an inspiration to me. He continued to transfer his immense scientific knowledge to generate new ideas for unique nutritional supplements. Also, I will remember hearing his engaging and entertaining presentations, applying his superior ability to communicate complex scientific concepts to his audience.</blockquote>
-                <div class="testimonial-author"><p>Dr. Laszlo Somogyi</p><p>Scientific Colleague</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 12 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>It was a great privilege and honor to know and work with Art Furst. There are many great scientists in the world but there are few scientists who are also great human beings as Art was. He was always modest and even humble but always there to help and bring his enormous knowledge and experience to the solving of problems or developing great new products.</blockquote>
-                <div class="testimonial-author"><p>Dr. David Shepherd</p><p>Scientific Colleague</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 13 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>It was a real honor to have known and worked with Dr. Furst for the past 20 years. I think his greatest attribute was the fact that he shared his knowledge so generously. He was always available for consultation (I consulted with him on a regular basis)! If he didn't have an immediate answer for a question, he would research the information available and provide a reasonable answer. He was always continuing his education by studying, reviewing, researching, discussing, debating, and writing. He was a conservative, stabilizing voice that made sure we did what was right. Not only an admirable colleague, but as a friend; I will miss him.</blockquote>
-                <div class="testimonial-author"><p>Dr. Fred Hooper</p><p>Scientific Colleague</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 14 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>When I was with a pharmaceutical company previous to GNLD, I had known Dr. Furst only by name. I had known that he made a significant contribution to international society. When I met him in person after joining GNLD, all I could say to myself was 'That Dr. Furst I knew only by name is now in front of me and actually moving.' I didn't know about his underprivileged childhood until I joined GNLD. I had previously pictured him as a 'stuffed shirt' kind of scholar. However, he was completely different. He was just like a sweet grandpa full of mischief and humor. I could sense gentleness from him—that only a person who completes one's life with great satisfaction can develop. I have a deep respect for him that will never fade.</blockquote>
-                <div class="testimonial-author"><p>Naoko Iwai</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 15 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Dr. Furst was a very special individual in that he was totally driven to contribute all he could to mankind, and not motivated by personal recognition, fame or financial gain. We consider it an honor and privilege to have known Dr. Furst and his wife, Florence. His contributions to science in general, and GNLD specifically, will continue to benefit millions of people worldwide for untold years to come. Dr. Furst loved to say, 'Unique has no modifiers; you're either unique or you ain't.' Dr. Furst was unique, and we are proud to say he was also our friend.</blockquote>
-                <div class="testimonial-author"><p>Chuck & Charlotte Shelton</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 16 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Words can't give credit to a man of Dr. Arthur Furst's caliber. He has been an incredible inspiration to us and to our team. We are honored and blessed to have been associated with him through the GNLD opportunity.</blockquote>
-                <div class="testimonial-author"><p>Charlie & Alta Bolton</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 17 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Arthur Furst will always remain the pride of GNLD, a symbol of a great mind, humanity, and inexhaustible energy. Advancements in science, wherein one person takes a huge step for the whole of mankind, are the foundation upon which history is made. Thank you, Arthur.</blockquote>
-                <div class="testimonial-author"><p>Vlatka & Elio Iori</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 18 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>The whole of humanity will live eternally grateful for Dr. Furst's wondrous discoveries.</blockquote>
-                <div class="testimonial-author"><p>Dr. Francisco Criollo</p><p>Medical Professional</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 19 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>'Unique has no modifiers,' Dr. Furst once told us. 'You're either unique or you're not. And GNLD is unique!' This is also true of Arthur Furst. He was brilliant, special and unique. We feel deeply blessed to have benefited from his healing wisdom, and to have had the privilege of calling Art Furst our friend.</blockquote>
-                <div class="testimonial-author"><p>The Byrd Team</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 20 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>To talk with Dr. Furst, to share scientific information, and to listen to his lectures-these things will always comprise his best heritage to GNLD. He represented science, confidence, authority, sense of humor, and positive attitude. Best of all, we loved that he was a person of many years but with a young heart and mind.</blockquote>
-                <div class="testimonial-author"><p>Diana & Joaquin Gonzalez Aragon</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 21 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Dr. Arthur Furst was a unique, respectable, and very humane person who was committed to his research. We do not host a single GNLD meeting or training during which we do not proudly and gratefully mention Dr. Arthur Furst and his life's work.</blockquote>
-                <div class="testimonial-author"><p>Heikki Heimonen & Eija Hiltunen</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 22 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>What a loss to humankind. We are grateful to you, Dr. Furst, not only for what you meant to us in the scientific world, but also for the example of humility, integrity, and generosity you gave us. You showed us how one can be so successful, but also live a balanced life. Your teachings have also benefited our lives so greatly, and they will do so for generations to come. What a gift to the world—thank you!</blockquote>
-                <div class="testimonial-author"><p>Rory & Noela McDermid</p><p>GNLD</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 23 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>Dr. Arthur Furst will be remembered by me and Delmar, as well as many others both nationally and internationally, for his scientific achievements in toxicology and cancer research and for his incredible partnership with Stanford University, just to name a few accomplishments. We also will remember him for his dedication to educating people around the world about the importance of good nutrition. We will always remember him as a pioneer with a passion for the nutritional welfare of all people. The Carmack team will truly miss him.</blockquote>
-                <div class="testimonial-author"><p>Delmar & Dr. Shirley Carmack</p><p>Scientific Colleagues</p></div>
-              </div>
-            </div>
-
-            <!-- Testimonial 24 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">&ldquo;</div>
-                <blockquote>In the course of one's life, there are a handful of people who shape and influence our future in ways we cannot imagine at the time. A parent, a teacher, a mentor, a friend-all can contribute to the formation of who we are, the person we become. For me, as for many others, Arthur Furst was just such an influence. When I first met Art, more than 25 years ago, the connection was immediate. There was no doubt in my mind that he was someone special, someone unique. I had read all I could about his academic and scientific achievements, and I was duly impressed and respectful. His amazing intellect, piercingly clear thinking, and insatiable capacity for investigation and understanding were legendary in both the academic and scientific communities. Yet his reputation for championing his beliefs with the tenacity of a bulldog was balanced by the peaceful grace and selflessness with which he shared every new discovery. He was one of the great minds of modern science! As powerful as all that was, it was the man who impressed me the most, then and every day thereafter. As is often the case with such a great mind, Art was also a great soul. His sense of humor was wry and sharp, and it often showed up at the most unexpected moment. His sense of caring was ever-present, always a guide in his decision-making process. His sense of rhythm made him a student of dance and the many ancient cultures of its origin. He loved Asian food for its simplicity; opera for its emotive stories, and the symphony for its grandeur. He loved being the best, and loved being first, something he often quipped was appropriate considering his last name. But most of all, he loved people, and finding new ways to help them. Every person on planet Earth has gained from the life of this unique man. Every one of us is better off because he was here. All of us who make up the GNLD family he loved and cared for so much for so long are blessed to have had him so close to us. He left us with a great legacy, and through us he will live forever. Over the years, our relationship grew from one that was very much like that of a teacher and his student to one of many interrelated facets. He became a mentor, a brother, a counselor, a partner, a supporter, and most of all, a friend. I gained more than I could have imagined from his presence in my life, and lost more than I can imagine with his passing. I am a better person because of him. His memory will live on as part of me forever. I love you, Art!</blockquote>
-                <div class="testimonial-author"><p>John Miller</p><p>GNLD</p></div>
-              </div>
-            </div>
-
           </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>What an incredible privilege it has been to have one of the greatest minds of our time dedicated to GNLD and the development of our products. We will always be indebted—and forever thankful—for Dr. Furst's contributions; contributions that will continue to impact the lives of thousands of people for many years to come. Arthur's wonderful understanding and gentle nature will be sorely missed by all of his friends and colleagues. Rest in peace, dear friend.</blockquote>
+              <div class="testimonial-author"><p>Roget Uys</p><p>GNLD</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>Through his focus on nutrition as a base for good health, Dr. Furst touched the lives of so many people throughout this world. Art's endorsement alone has not only provided me personally with conviction to use our products with confidence, but also to give them to my family as a vital part of their daily lives. We will miss him dearly, but we go forward knowing the world is a better place due to his contributions to us all!</blockquote>
+              <div class="testimonial-author"><p>Dan Lewis</p><p>GNLD</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>It has been a great privilege knowing Dr. Furst. We've been blessed by his brilliant mind as well as his fun-loving personality. He will truly be missed by us all.</blockquote>
+              <div class="testimonial-author"><p>George Casale</p><p>GNLD</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>The first time I met Art was in the late 1980s... I have a clear memory of him telling me about his long-standing interest in folk dancing, and then getting out of his chair and demonstrating a very tricky Greek folk dance movement wherein the dancers get down in a crouch and kick each leg straight out in a rapid fashion. Art must have been in his late sixties or early seventies at the time, and he was as limber and strong as any dancer I've seen! I bet Art is folk dancing in heaven.</blockquote>
+              <div class="testimonial-author"><p>Sally Dalton</p><p>Associate VP, Development, University of San Francisco</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>Dr. Furst has been an inspiration—as a scientist and as a person—for his kindness and humanity. As do all great scientists, Dr. Furst used his great intellect to pursue his research, bringing different fields together to make a whole that would have an impact on correct scientific understanding and, ultimately, on the lives of many individuals. Although he became renowned, humility characterized his manner. He was generous, gentle and caring.</blockquote>
+              <div class="testimonial-author"><p>Dr. Arianna Carughi</p><p>Scientific Advisory Board</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>I knew Arthur Furst for over 30 years as a friend and professional colleague. We were fellow toxicologists and served together on numerous boards and scientific societies. He was well respected by his peers. I shall miss him.</blockquote>
+              <div class="testimonial-author"><p>Dr. Gordon Newell</p><p>Fellow Toxicologist</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>Arthur Furst will always remain the pride of GNLD, a symbol of a great mind, humanity, and inexhaustible energy. Advancements in science, wherein one person takes a huge step for the whole of mankind, are the foundation upon which history is made. Thank you, Arthur.</blockquote>
+              <div class="testimonial-author"><p>Vlatka &amp; Elio Iori</p><p>GNLD</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>During the past 14 years, I had the privilege to be associated with Arthur, enjoying his warm friendship and, most of all, learning from his long and highly valuable experience in toxicology and human nutrition. He continued to transfer his immense scientific knowledge to generate new ideas for unique nutritional supplements. I will remember hearing his engaging and entertaining presentations, applying his superior ability to communicate complex scientific concepts to his audience.</blockquote>
+              <div class="testimonial-author"><p>Dr. Laszlo Somogyi</p><p>Scientific Colleague</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>It was a real honor to have known and worked with Dr. Furst for the past 20 years. I think his greatest attribute was the fact that he shared his knowledge so generously. He was always available for consultation. He was a conservative, stabilizing voice that made sure we did what was right. Not only an admirable colleague, but as a friend; I will miss him.</blockquote>
+              <div class="testimonial-author"><p>Dr. Fred Hooper</p><p>Scientific Colleague</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>In the course of one's life, there are a handful of people who shape and influence our future in ways we cannot imagine at the time. When I first met Art, more than 25 years ago, the connection was immediate. There was no doubt in my mind that he was someone special, someone unique. But most of all, he loved people, and finding new ways to help them. Every person on planet Earth has gained from the life of this unique man. I love you, Art!</blockquote>
+              <div class="testimonial-author"><p>John Miller</p><p>GNLD</p></div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <blockquote>Dr. Furst was a very special individual in that he was totally driven to contribute all he could to mankind, and not motivated by personal recognition, fame or financial gain. Dr. Furst loved to say, 'Unique has no modifiers; you're either unique or you ain't.' Dr. Furst was unique, and we are proud to say he was also our friend.</blockquote>
+              <div class="testimonial-author"><p>Chuck &amp; Charlotte Shelton</p><p>GNLD</p></div>
+            </div>
+          </div>
+
+        </div><!-- /.testimonials-track -->
+
+        <!-- NAV CONTROLS — outside the track -->
+        <div class="testimonials-nav">
+          <button id="testimonials-prev" class="testimonials-btn" aria-label="Previous testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div id="testimonials-dots" class="testimonials-dots"></div>
+          <button id="testimonials-next" class="testimonials-btn" aria-label="Next testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
-      </div>
+
+      </div><!-- /.testimonials-slider -->
     </div>
   </section>
 
@@ -571,6 +469,8 @@
     </div>
   </footer>
 
+  <!-- Slick Slider JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="js/script.js"></script>
 
 </body>
