@@ -705,11 +705,6 @@ section {
   border-radius: 16px;
 }
 
-.testimonials-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
-}
 
 .testimonial-slide {
   min-width: 100%;
