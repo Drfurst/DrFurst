@@ -1096,38 +1096,13 @@ footer {
 
 /* ══════════════════════════════
    SLICK OVERRIDES
-   Add these at the bottom of styles.css
 ══════════════════════════════ */
 
 /* Hide Slick's default arrows (we use custom buttons) */
 .slick-prev, .slick-next { display: none !important; }
 
-/* Dots container — Slick renders inside #testimonials-dots */
-.slick-dots {
-  display: flex !important;
-  gap: 8px;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.slick-dots li { margin: 0; }
-
-.slick-dots li button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #e5e7eb;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 0; /* hide default Slick dot number */
-  transition: background 0.25s, transform 0.25s;
-}
-
-.slick-dots li button:hover { background: #928673; transform: scale(1.1); }
-.slick-dots li.slick-active button { background: #1c79a2; transform: scale(1.2); }
+/* Hide dots entirely */
+.slick-dots { display: none !important; }
 
 /* Prevent layout shift during init */
 .testimonials-track { min-height: 200px; }
@@ -1135,9 +1110,55 @@ footer {
 /* Each slide takes full width */
 .testimonial-slide { outline: none; }
 
-/* Override Slick's inline display:block on slides */
-.slick-slide { height: auto; }
+/* Smooth equal-height slides */
 .slick-track { display: flex !important; align-items: stretch; }
+.slick-slide { height: auto; }
 .slick-slide > div { height: 100%; }
 .testimonial-slide { height: 100%; display: flex !important; }
 .testimonial-card { flex: 1; }
+
+/* ── Nav buttons — no background, blue chevrons only ── */
+.testimonials-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.testimonials-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  color: #1c79a2;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+}
+
+.testimonials-btn:hover {
+  color: #155a7a;
+  transform: scale(1.2);
+  background: none;
+  box-shadow: none;
+}
+
+.testimonials-btn:active { transform: scale(0.95); }
+
+.testimonials-btn:disabled {
+  color: #dedede;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonials-nav { gap: 24px; margin-top: 20px; }
+  .testimonials-btn svg { width: 24px; height: 24px; }
+}

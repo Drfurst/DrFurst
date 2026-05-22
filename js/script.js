@@ -21,33 +21,28 @@ $(document).ready(function () {
     slidesToScroll: 1,
     autoplay:       true,
     autoplaySpeed:  8000,
-    speed:          600,
+    speed:          800,        /* smooth transition speed */
     fade:           false,
-    cssEase:        'ease-in-out',
+    cssEase:        'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
     arrows:         true,
-    dots:           true,
+    dots:           false,      /* no dots */
     draggable:      true,
     swipe:          true,
     touchMove:      true,
-    infinite:       true,
+    infinite:       true,       /* true infinite — no jump */
     adaptiveHeight: true,
+    waitForAnimate: true,       /* prevent double-click skip */
 
     /* Use your existing prev/next buttons */
     prevArrow: $('#testimonials-prev'),
     nextArrow: $('#testimonials-next'),
-    appendDots: $('#testimonials-dots'),
-
-    /* Dot markup */
-    customPaging: function () {
-      return '<button class="testimonial-dot" aria-label="Go to slide"></button>';
-    },
 
     responsive: [
       {
         breakpoint: 768,
         settings: {
           arrows: true,
-          dots:   true
+          dots:   false
         }
       }
     ]
