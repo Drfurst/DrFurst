@@ -583,9 +583,8 @@ section {
 /* Scholarship Section */
 
 .scholars-slider-wrap {
-  overflow: hidden;
   position: relative;
-  padding: 0 16px;
+  margin: 0 44px;
 }
 
 @media (min-width: 768px) {
@@ -595,7 +594,7 @@ section {
 }
 
 .scholars-track .slick-list {
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .scholar-slide {
