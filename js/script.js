@@ -105,3 +105,47 @@ function toggleBio(btn) {
     btn.textContent = 'Read Less';
   }
 }
+
+/* ── 5. Scholarship Slider ── */
+$(document).ready(function () {
+
+  $('.scholars-track').slick({
+    slidesToShow:   3,          /* 3 visible on desktop */
+    slidesToScroll: 1,
+    autoplay:       true,
+    autoplaySpeed:  3500,
+    speed:          700,
+    cssEase:        'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
+    arrows:         false,
+    dots:           false,
+    infinite:       true,
+    draggable:      true,
+    swipe:          true,
+    touchMove:      true,
+    centerMode:     false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow:  1.08,   /* peekaboo: show 1 full + 8% of next */
+          slidesToScroll: 1,
+          centerMode:    false,
+        }
+      }
+    ]
+  });
+
+  /* Pause on hover */
+  $('.scholars-slider-wrap').on('mouseenter', function () {
+    $('.scholars-track').slick('slickPause');
+  }).on('mouseleave', function () {
+    $('.scholars-track').slick('slickPlay');
+  });
+
+});
