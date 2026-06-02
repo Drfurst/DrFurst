@@ -587,6 +587,7 @@ section {
 
 .scholars-slider-wrap {
   position: relative;
+  overflow: hidden;
 }
 
 .scholars-track .slick-list {
@@ -658,7 +659,7 @@ section {
 .scholars-track .slick-prev,
 .scholars-track .slick-next {
   top: auto;
-  bottom: -56px;          /* sit below the cards */
+  bottom: -72px;          /* sit below the cards */
   width: 44px;
   height: 44px;
   background: #fff;
