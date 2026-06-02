@@ -133,10 +133,11 @@ $(document).ready(function () {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow:  1.08,   /* peekaboo: show 1 full + 8% of next */
+          slidesToShow:  1,
           slidesToScroll: 1,
-          centerMode:    false,
+          centerMode:    true,
           arrows: false,
+          centerPadding: '40px'
         }
       }
     ]

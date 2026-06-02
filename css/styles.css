@@ -580,13 +580,11 @@ section {
   font-weight: 700;
 }
 
-/* Scholarship Section */
+
 /* Scholarship Section */
 .scholars-slider-wrap {
   position: relative;
-  margin: 0 -16px;        /* break out of section padding */
-  padding: 0 16px;        /* add it back so first card aligns */
-  overflow: hidden;       /* clip the bleeding right card */
+  /* clip the bleeding right card */
 }
 
 @media (min-width: 641px) {
