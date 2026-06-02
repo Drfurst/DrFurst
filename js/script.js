@@ -117,7 +117,7 @@ $(document).ready(function () {
     speed:          700,
     cssEase:        'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
     arrows:         false,
-    dots:           false,
+    dots:           true,
     infinite:       true,
     draggable:      true,
     swipe:          true,

@@ -582,7 +582,74 @@ section {
 
 
 /* Scholars Section */
+.scholars-slider-wrap {
+  position: relative;
+}
 
+/* Arrow buttons */
+.scholars-prev,
+.scholars-next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c79a2;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.scholars-prev { left: -22px; }
+.scholars-next { right: -22px; }
+
+.scholars-prev:hover,
+.scholars-next:hover {
+  background: #1c79a2;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(28,121,162,0.3);
+}
+
+/* Hide arrows on mobile — swipe is enough */
+@media (max-width: 640px) {
+  .scholars-prev,
+  .scholars-next { display: none; }
+}
+
+/* Slick dots — styled as small teal pills */
+.scholars-track .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 6px;
+  list-style: none;
+  margin-top: 24px;
+  padding: 0;
+}
+
+.scholars-track .slick-dots li button {
+  font-size: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d0d0c8;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, width 0.2s, border-radius 0.2s;
+}
+
+.scholars-track .slick-dots li.slick-active button {
+  background: #1c79a2;
+  width: 24px;
+  border-radius: 4px;
+}
 /* Wrapper gives us the peekaboo overflow */
 .scholars-slider-wrap {
   overflow: hidden;
