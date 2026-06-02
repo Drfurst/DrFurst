@@ -582,16 +582,11 @@ section {
 
 
 /* Scholars Section */
-/* ══════════════════════════════
-   SCHOLARSHIP SLIDER
-   Add to css/styles.css —
-   replace the old .scholars-grid / .scholar-card block
-══════════════════════════════ */
 
 /* Wrapper gives us the peekaboo overflow */
 .scholars-slider-wrap {
-  overflow: hidden;           /* clips the peeking cards */
-  margin: 0 -16px;            /* bleed to edges on mobile */
+  overflow: hidden;
+  background: #fff;
   padding: 0 16px;
 }
 
