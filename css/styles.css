@@ -91,8 +91,7 @@ nav a:hover {
   display: flex;
   width: max-content;
   height: 148px;
-  gap: 10px;
-  animation: filmScroll 22s linear infinite;
+  animation: filmScroll 40s linear infinite;
   will-change: transform;
 }
 
@@ -103,15 +102,12 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
+  margin-right: 10px
 }
 
 @keyframes filmScroll {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(-1870px);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-1530px); }
 }
 
 .hero-portrait {
