@@ -581,9 +581,13 @@ section {
 }
 
 /* Scholarship Section */
+#scholarships {
+  overflow: hidden;
+}
+
 .scholars-slider-wrap {
-         position: relative;
-       }
+  position: relative;
+}
 
 .scholars-track .slick-list {
   overflow: hidden !important;
@@ -694,6 +698,11 @@ section {
 .scholars-track .slick-prev:hover:before,
 .scholars-track .slick-next:hover:before {
   color: #fff;
+}
+
+@media (max-width: 640px) {
+  .scholars-track .slick-prev,
+  .scholars-track .slick-next { display: none !important; }
 }
 
 /* Publications Section */

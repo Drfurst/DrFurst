@@ -136,6 +136,7 @@ $(document).ready(function () {
           slidesToShow:  1.08,   /* peekaboo: show 1 full + 8% of next */
           slidesToScroll: 1,
           centerMode:    false,
+          arrows: false,
         }
       }
     ]
