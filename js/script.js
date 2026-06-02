@@ -89,3 +89,19 @@ $(document).ready(function () {
   }
 
 }());
+
+/* ── 4. Biography Read More toggle ── */
+function toggleBio(btn) {
+  var expanded = document.getElementById('bio-expanded');
+  var isOpen = expanded.style.opacity === '1';
+
+  if (isOpen) {
+    expanded.style.maxHeight = '0';
+    expanded.style.opacity = '0';
+    btn.textContent = 'Read More';
+  } else {
+    expanded.style.maxHeight = expanded.scrollHeight + 'px';
+    expanded.style.opacity = '1';
+    btn.textContent = 'Read Less';
+  }
+}

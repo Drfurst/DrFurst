@@ -99,6 +99,8 @@
   </section>
 
   <!-- Biography -->
+  <!-- Replace your existing <section id="biography"> block with this -->
+
   <section id="biography" style="background:#fff;">
     <div class="container">
       <div class="bio-card">
@@ -109,14 +111,27 @@
             <div class="bio-text">
               <p>Dr. Arthur Furst (1916&ndash;1999) was a distinguished American chemist and toxicologist whose groundbreaking research in chemical carcinogenesis and environmental health helped shape modern understanding of cancer-causing agents.</p>
               <p>Throughout his illustrious career spanning over five decades, Dr. Furst made significant contributions to the fields of organic chemistry, toxicology, and cancer research. His work at the University of San Francisco, where he served as Professor of Chemistry and Director of the Institute of Chemical Biology, established him as one of the leading authorities on the relationship between chemical structure and carcinogenic activity.</p>
+
+              <!-- Expanded content — hidden by default -->
+              <div id="bio-expanded" style="
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.5s ease, opacity 0.4s ease;
+              opacity: 0;
+            ">
+                <p style="margin-top: 16px;">Dr. Arthur Furst was the Founding Member Emeritus and the &ldquo;spiritual leader&rdquo; of the NeoLife Scientific Advisory Board. He founded the Stanford Cancer Chemotherapy Laboratory and was at the forefront of disease-prevention science for 50 years.</p>
+                <p>Many of his discoveries led to groundbreaking NeoLife products, and his enormous talent, energy, dedication, and vision are major reasons why, year after year, NeoLife has delivered such leading-edge products to fulfill genuine human needs.</p>
+              </div>
             </div>
-            <button class="link-btn">Read More</button>
+
+            <button class="link-btn" id="bio-read-more" onclick="toggleBio(this)">Read More</button>
           </div>
           <div class="bio-img"><img src="assets/images/biography/biography-photo.jpg" alt="Dr. Arthur Furst" /></div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Timeline -->
   <section id="timeline" style="background:#fff;">
