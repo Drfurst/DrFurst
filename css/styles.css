@@ -1172,10 +1172,8 @@ footer {
 ══════════════════════════════ */
 
 /* ══ SLICK OVERRIDES ══ */
-.slick-prev,
-.slick-next { display: none !important; }
-
-.slick-dots { display: none !important; }
+.testimonials-track .slick-prev,
+.testimonials-track .slick-next { display: none !important; }
 
 .testimonials-track { will-change: transform; }
 
