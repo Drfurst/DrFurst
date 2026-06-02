@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Articles &mdash; Dr. Arthur Furst</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ── Page-specific overrides ── */
+        .articles-hero {
+            background: #f5f5f0;
+            padding: 72px 24px 48px;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e0;
+        }
+        .articles-hero h1 { color: #1c79a2; margin-bottom: 12px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+        .articles-hero p  { color: #555; max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: #1c79a2; font-size: 0.9rem; font-weight: 600;
+            text-decoration: none; margin-bottom: 24px;
+            transition: opacity .2s;
+        }
+        .back-link:hover { opacity: .7; }
+
+        /* ── Filter bar ── */
+        .filter-bar {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            justify-content: center; padding: 32px 24px 0;
+        }
+        .filter-btn {
+            background: #fff; border: 1.5px solid #d0d0c8;
+            border-radius: 20px; padding: 6px 18px;
+            font-size: 0.88rem; font-weight: 600; cursor: pointer;
+            color: #444; transition: all .2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #1c79a2; border-color: #1c79a2; color: #fff;
+        }
+
+        /* ── Decade sections ── */
+        .decade-section { padding: 0 24px; max-width: 900px; margin: 0 auto; }
+        .decade-label {
+            font-size: 1.35rem; font-weight: 800; color: #1c79a2;
+            margin: 48px 0 16px; padding-bottom: 10px;
+            border-bottom: 2px solid #d6eaf4;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .decade-label span.count {
+            font-size: 0.75rem; font-weight: 600; background: #e8f4fb;
+            color: #1c79a2; border-radius: 10px; padding: 2px 10px;
+        }
+
+        /* ── Article cards (match existing .pub-card) ── */
+        .pub-list { display: flex; flex-direction: column; gap: 12px; }
+        .pub-card {
+            display: flex; align-items: center; gap: 20px;
+            background: #fff; border-radius: 12px;
+            padding: 18px 24px; box-shadow: 0 1px 6px rgba(0,0,0,.06);
+            transition: box-shadow .2s, transform .2s;
+        }
+        .pub-card:hover { box-shadow: 0 4px 16px rgba(28,121,162,.12); transform: translateY(-1px); }
+        .pub-year {
+            font-size: 1.1rem; font-weight: 800; color: #1c79a2;
+            min-width: 46px; text-align: center;
+        }
+        .pub-info { flex: 1; }
+        .pub-info h3 { font-size: 0.97rem; font-weight: 600; color: #211f1b; margin-bottom: 2px; }
+        .pub-info p  { font-size: 0.82rem; color: #888; margin: 0; }
+        .link-btn {
+            display: inline-block; background: #1c79a2; color: #fff;
+            border: none; border-radius: 8px; padding: 8px 16px;
+            font-size: 0.82rem; font-weight: 600; white-space: nowrap;
+            cursor: pointer; text-decoration: none; transition: background .2s;
+        }
+        .link-btn:hover { background: #155f82; }
+
+        /* ── Undated section ── */
+        .undated-label { color: #888; border-color: #e0e0d8; }
+        .undated-label span.count { background: #f0f0ea; color: #888; }
+
+        /* ── Footer spacing ── */
+        .articles-footer-gap { padding-bottom: 64px; }
+
+        @media (max-width: 600px) {
+            .pub-card { flex-wrap: wrap; gap: 12px; }
+            .pub-year  { min-width: auto; }
+            .link-btn  { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html#biography">Biography</a></li>
+        <li><a href="index.html#timeline">Timeline</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#scholarships">Scholarships</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#testimonials">Voices &amp; Memories</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<div class="articles-hero">
+    <a href="index.html#publications" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Selected Publications
+    </a>
+    <h1>All Articles &amp; Publications</h1>
+    <p>A complete archive of Dr. Arthur Furst's articles, magazine features, and professional contributions spanning five decades of science and discovery.</p>
+</div>
+
+<!-- Filter bar -->
+<div class="filter-bar">
+    <button class="filter-btn active" data-decade="all">All</button>
+    <button class="filter-btn" data-decade="1970s">1970s</button>
+    <button class="filter-btn" data-decade="1980s">1980s</button>
+    <button class="filter-btn" data-decade="1990s">1990s</button>
+    <button class="filter-btn" data-decade="2000s">2000s</button>
+    <button class="filter-btn" data-decade="undated">Undated</button>
+</div>
+
+<!-- ═══════════════════════════ 1970s ═══════════════════════════ -->
+<div class="decade-section" data-decade-section="1970s">
+    <div class="decade-label">1970s <span class="count">10 articles</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year">1975</div>
+            <div class="pub-info">
+                <h3>Dr. Furst — More Honors</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1975 Counselor Dr Furst- More honors.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1976</div>
+            <div class="pub-info">
+                <h3>Internationally Known Nutrition Expert Joins Neo-Life</h3>
+                <p>The Neo-Life National</p>
+            </div>
+            <a href="assets/articles/1976 The Neo-Life National Internationally known nutrition expert joins Neo-Life.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1976</div>
+            <div class="pub-info">
+                <h3>Internationally Known Nutrition Expert Joins NL (Article)</h3>
+                <p>The Neo-Life National</p>
+            </div>
+            <a href="assets/articles/1976 The Neo-Life National article Internationally known nutrition expert joins NL.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Dr. Furst at Special Symposium</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1978 Counselor Dr. Furst at special symposium.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Neo-Life's Director of Research Wins Award</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1978 Counselor Neo-Lifes Director of Research wins award.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Dr. Furst at Special Symposium (Article)</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1978 Counselor article Dr. Furst at special symposium.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Neo-Life Magazine Feature on Arthur Furst</h3>
+                <p>Neo-Life Magazine</p>
+            </div>
+            <a href="assets/articles/1978 Neo-Life Magazine about AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1979</div>
+            <div class="pub-info">
+                <h3>An Introduction to Arthur Furst</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1979 Counselor An Introduction to AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1979</div>
+            <div class="pub-info">
+                <h3>SAB Article</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1979 Counselor SAB article.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1979</div>
+            <div class="pub-info">
+                <h3>Six for Success</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1979 Counselor Six for Success.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ═══════════════════════════ 1980s ═══════════════════════════ -->
+<div class="decade-section" data-decade-section="1980s">
+    <div class="decade-label">1980s <span class="count">21 articles</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year">1980</div>
+            <div class="pub-info">
+                <h3>Toxgard Returns — With Brand-New and Improved Formula</h3>
+                <p>The Counselor, December</p>
+            </div>
+            <a href="assets/articles/1980 Counselor Dec Toxgard returns--with brand-new and improved formula.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1980</div>
+            <div class="pub-info">
+                <h3>Successful Selling</h3>
+                <p>The Counselor, January</p>
+            </div>
+            <a href="assets/articles/1980 Counselor Jan Successful Selling.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1980</div>
+            <div class="pub-info">
+                <h3>Dr. Furst Honored</h3>
+                <p>The Counselor, July</p>
+            </div>
+            <a href="assets/articles/1980 Counselor July Dr. Furst honored.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1980</div>
+            <div class="pub-info">
+                <h3>As I See It</h3>
+                <p>The Counselor, March</p>
+            </div>
+            <a href="assets/articles/1980 Counselor Mar As I See It.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1980</div>
+            <div class="pub-info">
+                <h3>Technical Notes by Dr. Arthur Furst</h3>
+                <p>The Counselor, November</p>
+            </div>
+            <a href="assets/articles/1980 Counselor Nov Technical Notes by Dr AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1980</div>
+            <div class="pub-info">
+                <h3>Editorial</h3>
+                <p>The Counselor, October</p>
+            </div>
+            <a href="assets/articles/1980 Counselor Oct Editorial.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1981</div>
+            <div class="pub-info">
+                <h3>Keynote Address by Arthur Furst</h3>
+                <p>The Counselor, June</p>
+            </div>
+            <a href="assets/articles/1981 Counselor (June) Keynote Addresses by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1981</div>
+            <div class="pub-info">
+                <h3>NL Research: Meeting Today's Nutritional Needs with Tomorrow's Products</h3>
+                <p>The Counselor, January</p>
+            </div>
+            <a href="assets/articles/1981 Counselor Jan NL research- meeting todays nutritional needs with tomorrows products.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1982</div>
+            <div class="pub-info">
+                <h3>Article by Arthur Furst</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1982 Counselor AF article.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1984</div>
+            <div class="pub-info">
+                <h3>Introduction to the Magazine by Arthur Furst</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1984 Counselor - intro to mag by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1985</div>
+            <div class="pub-info">
+                <h3>Distributor Training Flyer</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1985 Counselor - Distributor Training flyer.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1985</div>
+            <div class="pub-info">
+                <h3>SAB Articles by AF, K. Hirsch, F. Hooper</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1985 Counselor SAB articles by AF K Hirsch F Hooper.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1985</div>
+            <div class="pub-info">
+                <h3>Founders Rallies Flyer</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/1985 Founders Rallies flyer.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1985</div>
+            <div class="pub-info">
+                <h3>Convention Speakers</h3>
+                <p>GNLD News, September</p>
+            </div>
+            <a href="assets/articles/1985 GNLD News Sept - Convention speakers.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Arthur Furst Receives Klaus Schwarz Commemorative Medal</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1986 Counselor - article AF receives Klaus Schwarz Commemorative Medal.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Candida Albicans</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1986 Counselor Candida Albicans.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Free Radicals and Oxidants — The Damaging Effects</h3>
+                <p>The Counselor, by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1986 Counselor Free Radicals and Oxidants--The Damaging Effects by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Warning: Life on Earth Can Be Hazardous to Your Health (Betagard)</h3>
+                <p>GNLD Flyer</p>
+            </div>
+            <a href="assets/articles/1986 Flyer Warning- Life on Earth Can be Hazardous to your Health regarding Betagard.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Nutritional Protection of the Immune System &amp; Betagard Flyer</h3>
+                <p>Professional Nurses Quarterly</p>
+            </div>
+            <a href="assets/articles/1986 Professional Nurses Quarterly - Betagard flyer & Nutritional Protection of the Immune System.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1987</div>
+            <div class="pub-info">
+                <h3>Know Your Enemy: Cancer</h3>
+                <p>The Counselor, July — by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1987 Counselor July Know Your Enemy Cancer by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1988</div>
+            <div class="pub-info">
+                <h3>Arthur Furst on Air Filtration</h3>
+                <p>The Counselor, Sept–Oct</p>
+            </div>
+            <a href="assets/articles/1988 Counselor - AF on Air Filtration Sept Oct.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1988</div>
+            <div class="pub-info">
+                <h3>Problems with Water</h3>
+                <p>The Counselor, May–June — by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1988 Counselor May June Problems With Water by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ═══════════════════════════ 1990s ═══════════════════════════ -->
+<div class="decade-section" data-decade-section="1990s">
+    <div class="decade-label">1990s <span class="count">23 articles</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>Beta Carotene</h3>
+                <p>The Counselor, July–Aug — by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1989 Counselor - Beta Carotene by AF July Aug.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>An Environmental Update</h3>
+                <p>The Counselor, May–June — by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1989 Counselor May June An Environmental Update by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>Arthur Furst Receiving Lifelong Contribution to the Betterment of Mankind Award</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1989 Counselor article AF receiving lifelong contribution to the betterment of mankind from Bob.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>Article by Arthur Furst</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1989 Counselor article by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1990</div>
+            <div class="pub-info">
+                <h3>One Man Can Make a Difference</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1990 Counselor One man can make a difference.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1990</div>
+            <div class="pub-info">
+                <h3>Arthur Furst Quote from Convention</h3>
+                <p>The Counselor, Sept–Oct</p>
+            </div>
+            <a href="assets/articles/1990 Counselor Sept Oct AF quote from convention.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1990</div>
+            <div class="pub-info">
+                <h3>Translating Science into Choices for Your Health</h3>
+                <p>The Counselor</p>
+            </div>
+            <a href="assets/articles/1990 Counselor Translating science into choices for your health.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1990</div>
+            <div class="pub-info">
+                <h3>Arthur Furst Article &amp; SAB</h3>
+                <p>The Counselor, Jan–Feb</p>
+            </div>
+            <a href="assets/articles/1990 Jan-Feb Counselor AF article & SAB.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1990</div>
+            <div class="pub-info">
+                <h3>Australia Counsellor</h3>
+                <p>Australia Counsellor, May–Jun</p>
+            </div>
+            <a href="assets/articles/1990 Australia Counsellor May Jun.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1992</div>
+            <div class="pub-info">
+                <h3>Dr. Furst Honored at UCLA</h3>
+                <p>GNLD News, Jan–Feb</p>
+            </div>
+            <a href="assets/articles/1992 GNLD News Dr AF honored at UCLA Jan Feb.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1993</div>
+            <div class="pub-info">
+                <h3>Arthur Furst Accomplishments</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/1993 AF accomplishments.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1994</div>
+            <div class="pub-info">
+                <h3>Neo-Life Magazine SAB Profile</h3>
+                <p>Neo-Life Magazine, Spring</p>
+            </div>
+            <a href="assets/articles/1994 Neo-Life Mag AF SAB profile Spring.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1995</div>
+            <div class="pub-info">
+                <h3>The Experts Discuss Immune Function</h3>
+                <p>Neo-Life Magazine — Article by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1995 Neo-Life Magazine The Experts Discuss Immune Function - AF article.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1995</div>
+            <div class="pub-info">
+                <h3>SAB Discussion on Immune System</h3>
+                <p>Neo-Life Magazine, Fall</p>
+            </div>
+            <a href="assets/articles/1995 Neo-Life Magazine SAB discussion on Immune System Fall.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1995</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Global Science Network Pamphlet</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/1995 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1996</div>
+            <div class="pub-info">
+                <h3>Phytonutrients — Spring Feature</h3>
+                <p>Lifestyle, by Arthur Furst</p>
+            </div>
+            <a href="assets/articles/1996 Lifestyle AF Phytonutrients Spring.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1996</div>
+            <div class="pub-info">
+                <h3>Cancer Growth Inhibited 90% by GNLD Flavonoids</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/1996 Lifestyle Cancer Growth Inhibited 90% by GNLD Flavonoids.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1996</div>
+            <div class="pub-info">
+                <h3>The Science Behind Our Products Just Expanded</h3>
+                <p>Neo-Life Magazine</p>
+            </div>
+            <a href="assets/articles/1996 Neo-Life Magazine Science Behind Products Just Expanded.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1998</div>
+            <div class="pub-info">
+                <h3>SAB Update</h3>
+                <p>GNLD News</p>
+            </div>
+            <a href="assets/articles/1998 GNLD News SAB Update.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1998</div>
+            <div class="pub-info">
+                <h3>Phytonutrients and Antioxidants: Their Role in Anti-Aging and Cancer Prevention</h3>
+                <p>GNLD Lecture Program</p>
+            </div>
+            <a href="assets/articles/1998 GNLD Phytonutrients and Antioxidants- Their Role in Anti-Aging and Cancer Prevention lecture program.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1998</div>
+            <div class="pub-info">
+                <h3>Arthur Furst Speaks at an Event</h3>
+                <p>Lifestyle, July–Aug–Sept</p>
+            </div>
+            <a href="assets/articles/1998 Lifestyle AF speaks at an event July Aug Sept.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1998</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Global Science Network Pamphlet</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/1998 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1999</div>
+            <div class="pub-info">
+                <h3>Dr. Furst Published in Chemical Engineering News</h3>
+                <p>GNLD News</p>
+            </div>
+            <a href="assets/articles/1999 GNLD News Dr AF published in Chemical Engineering News.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1999</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Global Science Network Pamphlet</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/1999 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ═══════════════════════════ 2000s ═══════════════════════════ -->
+<div class="decade-section" data-decade-section="2000s">
+    <div class="decade-label">2000s <span class="count">15 articles</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year">2000</div>
+            <div class="pub-info">
+                <h3>Lifestyle Feature — Arthur Furst</h3>
+                <p>Lifestyle, Apr–May–Jun</p>
+            </div>
+            <a href="assets/articles/2000 Lifestyle AF Apr May Jun.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2000</div>
+            <div class="pub-info">
+                <h3>Arthur Furst's Farewell Letter</h3>
+                <p>Lifestyle, Apr–May–Jun</p>
+            </div>
+            <a href="assets/articles/2000 Lifestyle AF Farewell Letter Apr May Jun.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2000</div>
+            <div class="pub-info">
+                <h3>Celebrating Dr. Arthur Furst</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/2000 Lifestyle Celebrating Dr. AF b&w scan.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2001</div>
+            <div class="pub-info">
+                <h3>Breaking News</h3>
+                <p>GNLD News</p>
+            </div>
+            <a href="assets/articles/2001 GNLD News Breaking News.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2002</div>
+            <div class="pub-info">
+                <h3>Stanford &amp; SAB Unite</h3>
+                <p>GNLD News</p>
+            </div>
+            <a href="assets/articles/2002 GNLD News Stanford & SAB unite.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2002</div>
+            <div class="pub-info">
+                <h3>Arthur Furst, GNLD &amp; SAB Work Together</h3>
+                <p>Lifestyle, Jul–Aug–Sept</p>
+            </div>
+            <a href="assets/articles/2002 Lifestyle - AF GNLD & SAB work together Jul Aug Sept.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2002</div>
+            <div class="pub-info">
+                <h3>SAB Feature</h3>
+                <p>Lifestyle, Winter — Jan–Feb–Mar</p>
+            </div>
+            <a href="assets/articles/2002 Lifestyle Winter Jan Feb Mar SAB.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2003</div>
+            <div class="pub-info">
+                <h3>SAB Issue 3</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/2003 Lifestyle SAB Issue 3.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2003</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Global Science Network Pamphlet</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/2003 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2004</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Stanford — Summer</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/2004 Lifestyle Summer SAB & Stanford.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2005</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Stanford — Summer</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/2005 Lifestyle Summer SAB & Stanford.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2005</div>
+            <div class="pub-info">
+                <h3>SAB &amp; Global Science Network Pamphlet</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/2005 SAB & Global Science Network pamphlet.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2005</div>
+            <div class="pub-info">
+                <h3>SAB Feature</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/2005 SAB.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2006</div>
+            <div class="pub-info">
+                <h3>In Memory of Arthur Furst</h3>
+                <p>GNLD News, Winter</p>
+            </div>
+            <a href="assets/articles/2006 GNLD News In Memory of AF Winter.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2006</div>
+            <div class="pub-info">
+                <h3>What the Experts Are Saying about Vitality Aloe Vera Plus</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/Lifestyle What the Experts are Saying about Vitality Aloe Vera Plus.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ═══════════════════════════ Undated ═══════════════════════════ -->
+<div class="decade-section" data-decade-section="undated">
+    <div class="decade-label undated-label">Undated <span class="count">4 articles</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>GNLD SAB Science Article</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/GNLD SAB Science article.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>Global Science Network SAB Article</h3>
+                <p>GNLD</p>
+            </div>
+            <a href="assets/articles/Global Science Network SAB article.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>In Memory of Dr. Arthur Furst</h3>
+                <p>Memorial Flyer</p>
+            </div>
+            <a href="assets/articles/In Memory of Dr AF flyer.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>What the Experts Are Saying about Vitality Aloe Vera Plus</h3>
+                <p>Lifestyle</p>
+            </div>
+            <a href="assets/articles/Lifestyle What the Experts are Saying about Vitality Aloe Vera Plus.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="articles-footer-gap"></div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>Dr. Arthur Furst</h3>
+            <p style="margin-bottom:8px;">1916 &ndash; 1999</p>
+            <p>In loving memory of Dr. Arthur Furst, whose pioneering research in toxicology and chemical carcinogenesis continues to protect public health worldwide.</p>
+        </div>
+        <div>
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="index.html#biography">Biography</a></li>
+                <li><a href="index.html#timeline">Timeline</a></li>
+                <li><a href="index.html#scholarships">Scholarship Recipients</a></li>
+                <li><a href="index.html#gallery">Photo Gallery</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="index.html#testimonials">Voices &amp; Memories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Legacy</h3>
+            <ul>
+                <li>Pioneer in Toxicology</li>
+                <li>Cancer Research Leader</li>
+                <li>Educator &amp; Mentor</li>
+                <li>200+ Publications</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 In Memory of Dr. Arthur Furst. This memorial website honors his life and legacy.</p>
+    </div>
+</footer>
+
+<script>
+    // Decade filter
+    const btns = document.querySelectorAll('.filter-btn');
+    const sections = document.querySelectorAll('[data-decade-section]');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.decade;
+        sections.forEach(sec => {
+          if (target === 'all' || sec.dataset.decadeSection === target) {
+            sec.style.display = '';
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+      });
+    });
+</script>
+
+</body>
+</html>
