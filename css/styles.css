@@ -582,61 +582,93 @@ section {
 
 
 /* Scholars Section */
-.scholars-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+/* ══════════════════════════════
+   SCHOLARSHIP SLIDER
+   Add to css/styles.css —
+   replace the old .scholars-grid / .scholar-card block
+══════════════════════════════ */
+
+/* Wrapper gives us the peekaboo overflow */
+.scholars-slider-wrap {
+  overflow: hidden;           /* clips the peeking cards */
+  margin: 0 -16px;            /* bleed to edges on mobile */
+  padding: 0 16px;
 }
 
-@media (min-width: 640px) {
-  .scholars-grid {
-    grid-template-columns: 1fr 1fr;
+@media (min-width: 768px) {
+  .scholars-slider-wrap {
+    margin: 0;
+    padding: 0;
   }
 }
 
-@media (min-width: 1024px) {
-  .scholars-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Slick will manage .scholars-track */
+.scholars-track .slick-list {
+  overflow: visible !important; /* peekaboo: let adjacent slides show */
 }
 
+/* Each slide wrapper */
+.scholar-slide {
+  padding: 0 10px;            /* gap between cards */
+}
+
+/* The card itself */
 .scholar-card {
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scholar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 
 .scholar-card img {
   width: 100%;
-  height:330px;
+  height: 280px;
   object-fit: cover;
   object-position: top center;
   display: block;
 }
 
 .scholar-info {
-  padding: 24px;
-}
-
-.scholar-info .year {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #211f1b;
-  margin-bottom: 8px;
+  padding: 20px 24px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .scholar-info h3 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #211f1b;
-  margin-bottom: 16px;
+  margin: 0;
+  line-height: 1.3;
 }
 
-.scholar-info .meta {
-  font-size: 0.85rem;
-  color: #928673;
-  line-height: 1.8;
+/* Override link-btn for scholar cards — make it a real pill button */
+.scholar-btn {
+  background: #1c79a2 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: background 0.2s;
+  margin-top: 0 !important;
+}
+
+.scholar-btn:hover {
+  background: #155f82 !important;
+  color: #fff !important;
 }
 
 /* Publications Section */
