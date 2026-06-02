@@ -691,6 +691,9 @@ section {
 @media (max-width: 640px) {
   .scholars-track .slick-prev,
   .scholars-track .slick-next { display: none !important; }
+  #scholarships {
+    padding-bottom: 48px!important;
+  }
 }
 /* Publications Section */
 .pub-list {
