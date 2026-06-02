@@ -581,13 +581,16 @@ section {
 }
 
 /* Scholarship Section */
-#scholarships {
-  overflow: hidden;
-}
-
+/* Scholarship Section */
 .scholars-slider-wrap {
   position: relative;
-  overflow: hidden;
+}
+
+/* Clip ONLY on mobile */
+@media (max-width: 640px) {
+  .scholars-slider-wrap {
+    overflow: hidden;
+  }
 }
 
 .scholars-track .slick-list {
@@ -655,11 +658,10 @@ section {
   color: #fff !important;
 }
 
-/* ── Arrows below the slider, centered ── */
 .scholars-track .slick-prev,
 .scholars-track .slick-next {
   top: auto;
-  bottom: -72px;          /* sit below the cards */
+  bottom: -72px;
   width: 44px;
   height: 44px;
   background: #fff;
@@ -669,14 +671,8 @@ section {
   transition: background 0.2s, box-shadow 0.2s;
 }
 
-.scholars-track .slick-prev {
-  left: calc(50% - 52px); /* centered pair */
-}
-
-.scholars-track .slick-next {
-  right: auto;
-  left: calc(50% + 8px);  /* centered pair */
-}
+.scholars-track .slick-prev { left: calc(50% - 52px); }
+.scholars-track .slick-next { right: auto; left: calc(50% + 8px); }
 
 .scholars-track .slick-prev:hover,
 .scholars-track .slick-next:hover {
@@ -684,28 +680,16 @@ section {
   box-shadow: 0 4px 16px rgba(28,121,162,0.3);
 }
 
-.scholars-track .slick-prev:before {
-  content: '←';
-  color: #1c79a2;
-  font-size: 18px;
-}
-
-.scholars-track .slick-next:before {
-  content: '→';
-  color: #1c79a2;
-  font-size: 18px;
-}
+.scholars-track .slick-prev:before { content: '←'; color: #1c79a2; font-size: 18px; }
+.scholars-track .slick-next:before { content: '→'; color: #1c79a2; font-size: 18px; }
 
 .scholars-track .slick-prev:hover:before,
-.scholars-track .slick-next:hover:before {
-  color: #fff;
-}
+.scholars-track .slick-next:hover:before { color: #fff; }
 
 @media (max-width: 640px) {
   .scholars-track .slick-prev,
   .scholars-track .slick-next { display: none !important; }
 }
-
 /* Publications Section */
 .pub-list {
   display: flex;
