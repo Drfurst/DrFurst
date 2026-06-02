@@ -581,17 +581,9 @@ section {
 }
 
 /* Scholarship Section */
-
 .scholars-slider-wrap {
-  position: relative;
-  margin: 0 44px;
-}
-
-@media (min-width: 768px) {
-  .scholars-slider-wrap {
-    padding: 0;
-  }
-}
+         position: relative;
+       }
 
 .scholars-track .slick-list {
   overflow: hidden !important;
@@ -658,8 +650,11 @@ section {
   color: #fff !important;
 }
 
+/* ── Arrows below the slider, centered ── */
 .scholars-track .slick-prev,
 .scholars-track .slick-next {
+  top: auto;
+  bottom: -56px;          /* sit below the cards */
   width: 44px;
   height: 44px;
   background: #fff;
@@ -669,8 +664,14 @@ section {
   transition: background 0.2s, box-shadow 0.2s;
 }
 
-.scholars-track .slick-prev { left: -22px; }
-.scholars-track .slick-next { right: -22px; }
+.scholars-track .slick-prev {
+  left: calc(50% - 52px); /* centered pair */
+}
+
+.scholars-track .slick-next {
+  right: auto;
+  left: calc(50% + 8px);  /* centered pair */
+}
 
 .scholars-track .slick-prev:hover,
 .scholars-track .slick-next:hover {
@@ -694,12 +695,6 @@ section {
 .scholars-track .slick-next:hover:before {
   color: #fff;
 }
-
-@media (max-width: 640px) {
-  .scholars-track .slick-prev,
-  .scholars-track .slick-next { display: none !important; }
-}
-
 
 /* Publications Section */
 .pub-list {
