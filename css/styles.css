@@ -840,8 +840,10 @@ section {
   transform: none;
 }
 
-.testimonials-btn:hover svg {
-  stroke: #fff;
+.testimonials-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
 }
 
 .testimonials-btn:active {
