@@ -91,6 +91,7 @@ nav a:hover {
   display: flex;
   width: max-content;
   height: 148px;
+  gap: 10px;
   animation: filmScroll 40s linear infinite;
   will-change: transform;
 }
@@ -102,7 +103,6 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
-  margin-right: 10px
 }
 
 @keyframes filmScroll {
