@@ -86,6 +86,19 @@ nav a:hover {
   overflow: hidden;
   z-index: 1;
 }
+.film-scroll {
+  display: flex;
+  width: max-content;
+  height: 148px;
+  will-change: transform;
+}
+
+.film-scroll-mobile {
+  display: flex;
+  width: max-content;
+  height: 110px;
+  will-change: transform;
+}
 
 .film-scroll img {
   flex-shrink: 0;
@@ -94,11 +107,6 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
-}
-
-@keyframes filmScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-1530px); }
 }
 
 .hero-portrait {
