@@ -87,16 +87,6 @@ nav a:hover {
   z-index: 1;
 }
 
-.film-scroll {
-  display: flex;
-  width: max-content;
-  height: 148px;
-  gap: 10px;
-  animation: filmScroll 40s linear infinite;
-  animation-play-state: paused;
-  will-change: transform;
-}
-
 .film-scroll img {
   flex-shrink: 0;
   width: 160px;
