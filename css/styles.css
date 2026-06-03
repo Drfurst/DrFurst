@@ -203,15 +203,6 @@ nav a:hover {
   height: 110px;
 }
 
-.film-scroll-mobile {
-  display: flex;
-  width: max-content;
-  height: 110px;
-  gap: 10px;
-  animation: filmScroll 22s linear infinite;
-  will-change: transform;
-}
-
 .film-scroll-mobile img {
   flex-shrink: 0;
   width: 140px;
