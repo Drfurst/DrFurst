@@ -62,7 +62,8 @@ $(document).ready(function () {
           settings: {
             slidesToShow:  1,
             slidesToScroll: 1,
-            centerMode:    false,
+            centerMode:    true,
+            centerPadding:  '24px',
             arrows:        false,
           }
         }

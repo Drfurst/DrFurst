@@ -800,7 +800,6 @@ section {
 
   .testimonials-slider {
     overflow: hidden;
-    padding-rigth:48px;
   }
 }
 @media (max-width: 768px) {
