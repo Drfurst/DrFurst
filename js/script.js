@@ -201,3 +201,16 @@ function toggleQuote(btn) {
   quote.classList.toggle('expanded');
   btn.textContent = isExpanded ? 'Read More' : 'Read Less';
 }
+
+/* ── 7. Hide Read More if quote isn't truncated ── */
+$(document).ready(function() {
+  document.querySelectorAll('.testimonial-card blockquote').forEach(function(quote) {
+    var btn = quote.nextElementSibling;
+    if (!btn || !btn.classList.contains('testimonial-read-more')) return;
+
+    // Check if content is actually being clamped
+    if (quote.scrollHeight <= quote.clientHeight) {
+      btn.style.display = 'none';
+    }
+  });
+});
