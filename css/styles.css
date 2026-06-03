@@ -740,6 +740,7 @@ section {
 @media (max-width: 768px) {
   .testimonial-card {
     padding: 32px 24px;
+    margin: 10px;
   }
 }
 
@@ -796,6 +797,10 @@ section {
 @media (max-width: 640px) {
   .testimonials-container {
     overflow: visible;
+  }
+  
+  .testimonial-card blockquote {
+    -webkit-line-clamp: 6;
   }
 
   .testimonials-slider {
@@ -1153,16 +1158,18 @@ footer {
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .gallery-tabs {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     border-radius: 10px;
+    gap: 14px;
   }
 
   .gallery-tab {
-    padding: 8px 12px;
-    font-size: 0.76rem;
-    flex: 1;
+    padding: 10px 8px;
+    font-size: 0.8rem;
     text-align: center;
+    width: 100%;
   }
 
   .gallery-panel {
