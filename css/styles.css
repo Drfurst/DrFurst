@@ -107,6 +107,7 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
+  margin-right: 10px
 }
 
 .hero-portrait {
@@ -218,6 +219,7 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 8px;
+  margin-right: 10px
 }
 /* General Layout */
 section {
