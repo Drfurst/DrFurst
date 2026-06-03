@@ -800,6 +800,7 @@ section {
 
   .testimonials-slider {
     overflow: hidden;
+    padding-rigth:48px;
   }
 }
 @media (max-width: 768px) {
@@ -904,7 +905,7 @@ section {
 @media (max-width: 768px) {
   .testimonials-nav {
     gap: 16px;
-    margin-top: 24px;
+    margin: 24px;
   }
 
   .testimonials-btn {
