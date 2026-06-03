@@ -138,7 +138,7 @@ $(document).ready(function () {
     autoplaySpeed:  3500,
     speed:          700,
     cssEase:        'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
-    arrows:         true,
+    arrows:         false,
     dots:           false,
     infinite:       true,
     draggable:      true,
@@ -173,3 +173,8 @@ $(document).ready(function () {
   });
 
 });
+
+$('.scholars-track').slick({ arrows: false, ... });
+
+$('#scholars-prev').on('click', function() { $('.scholars-track').slick('slickPrev'); });
+$('#scholars-next').on('click', function() { $('.scholars-track').slick('slickNext'); });
