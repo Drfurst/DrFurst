@@ -818,35 +818,42 @@ section {
 }
 
 .testimonials-btn {
-  background: #1c79a2;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  background: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  color: #1c79a2;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(28, 121, 162, 0.3);
 }
 
 .testimonials-btn:hover {
-  background: #155a7a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(28, 121, 162, 0.4);
+  background: #1c79a2 !important;
+  box-shadow: 0 4px 16px rgba(28,121,162,0.3) !important;
+  color: #fff;
+  transform: none;
+}
+
+.testimonials-btn:hover svg {
+  stroke: #fff;
 }
 
 .testimonials-btn:active {
-  transform: translateY(0);
+  transform: scale(0.95);
 }
 
 .testimonials-btn:disabled {
-  background: #928673;
+  background: #fff !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+  color: #dedede;
   cursor: not-allowed;
   transform: none;
-  box-shadow: 0 2px 8px rgba(146, 134, 115, 0.3);
 }
 
 /* Dots Navigation */
