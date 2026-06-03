@@ -93,6 +93,7 @@ nav a:hover {
   height: 148px;
   gap: 10px;
   animation: filmScroll 40s linear infinite;
+  animation-play-state: paused;
   will-change: transform;
 }
 

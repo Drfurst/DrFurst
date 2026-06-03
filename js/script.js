@@ -3,7 +3,12 @@
    Dr. Arthur Furst — Main JS
    Requires: jQuery + Slick Carousel
 ══════════════════════════════ */
-
+/* ── 0. Start film strip only after images load ── */
+window.addEventListener('load', function () {
+  document.querySelectorAll('.film-scroll, .film-scroll-mobile').forEach(function (el) {
+    el.style.animationPlayState = 'running';
+  });
+});
 /* ── 1. Smooth scroll for nav links ── */
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
   link.addEventListener('click', function (e) {
