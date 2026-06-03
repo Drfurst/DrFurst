@@ -172,9 +172,13 @@ $(document).ready(function () {
     $('.scholars-track').slick('slickPlay');
   });
 
+  /* Wire custom nav buttons */
+    $('#scholars-prev').on('click', function () {
+      $('.scholars-track').slick('slickPrev');
+    });
+    $('#scholars-next').on('click', function () {
+      $('.scholars-track').slick('slickNext');
+    });
+
 });
 
-$('.scholars-track').slick({ arrows: false, ... });
-
-$('#scholars-prev').on('click', function() { $('.scholars-track').slick('slickPrev'); });
-$('#scholars-next').on('click', function() { $('.scholars-track').slick('slickNext'); });
