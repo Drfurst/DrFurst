@@ -760,9 +760,48 @@ section {
   font-style: italic;
   color: #211f1b;
   line-height: 1.7;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+
+  /* Collapsed state */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
+.testimonial-card blockquote.expanded {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.testimonial-read-more {
+  background: none;
+  border: none;
+  color: #1c79a2;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+  text-decoration: underline;
+}
+
+.testimonial-card {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 640px) {
+  .testimonials-container {
+    overflow: visible;
+  }
+
+  .testimonials-slider {
+    overflow: hidden;
+  }
+}
 @media (max-width: 768px) {
   .testimonial-card blockquote {
     font-size: 1.1rem;

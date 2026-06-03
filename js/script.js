@@ -56,6 +56,18 @@ $(document).ready(function () {
     infinite:       true,
     adaptiveHeight: false,
     waitForAnimate: true,
+    responsive: [
+        {
+          breakpoint: 640,
+          settings: {
+            slidesToShow:  1,
+            slidesToScroll: 1,
+            centerMode:    true,
+            centerPadding: '40px',
+            arrows:        false,
+          }
+        }
+      ]
   });
 
   /* Wire your custom buttons manually */
@@ -182,3 +194,10 @@ $(document).ready(function () {
 
 });
 
+/* ── 6. Testimonial Read More toggle ── */
+function toggleQuote(btn) {
+  var quote = btn.previousElementSibling;
+  var isExpanded = quote.classList.contains('expanded');
+  quote.classList.toggle('expanded');
+  btn.textContent = isExpanded ? 'Read More' : 'Read Less';
+}
