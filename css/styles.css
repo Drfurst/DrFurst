@@ -46,7 +46,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #e5e7eb;
   z-index: 50;
@@ -267,11 +267,11 @@ section {
 
 @media (min-width: 768px) {
   section {
-    padding: 0 50px;
+    padding: 0px 50px;
   }
 }
 
-/* All sections from Timeline onward get vertical padding on desktop */
+/* All sections from Timeline onward get vertical padding */
 #timeline,
 #timeline ~ section {
   padding-top: 48px;
@@ -293,14 +293,14 @@ section {
 
 
 /* ============================================================
-   6. SECTION TITLES (shared across all sections)
+   6. SECTION TITLES (shared)
    ============================================================ */
 .section-title {
   text-align: center;
   margin-bottom: 48px;
 }
 
-/* Default: blue heading */
+/* Default: blue  */
 .section-title h2 {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
@@ -308,29 +308,36 @@ section {
   color: #1c79a2;
 }
 
-/* Default: dark body text */
 .section-title p {
   font-size: 1rem;
   color: #211f1b;
 }
 
-/* Exception: Accomplishments card — white on blue background */
+h4.eyebrow {
+  font-size: 20px;
+  color: #1c79a2;
+  text-transform:uppercase;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* Exception: Accomplishments card — white text on blue background */
 .accomplishments-card .section-title h2 {
   color: #fff;
 }
 
 .accomplishments-card .section-title p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
 }
 
-/* Exception: Scholarships subtitle needs max-width centering */
+/* Scholarships subtitle needs max-width centering */
 #scholarships .section-title p {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Shared link/button style */
+/* Link button — text style, used for Bio Read More toggle */
 .link-btn {
   background: none;
   border: none;
@@ -376,7 +383,7 @@ section {
   }
 }
 
-/* Bio heading is dark — lives inside a card, not a .section-title */
+/* Bio h2 is dark — it's inside a card, not a .section-title */
 .bio-grid h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -619,7 +626,7 @@ section {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   border-radius: 16px;
   padding: 24px;
   text-align: center;
@@ -665,14 +672,14 @@ section {
 .scholar-card {
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scholar-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 
 .scholar-card img {
@@ -746,7 +753,7 @@ section {
   background: #fff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   transition: box-shadow 0.2s;
   display: flex;
   flex-direction: column;
@@ -754,7 +761,7 @@ section {
 }
 
 .pub-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 @media (min-width: 768px) {
@@ -786,41 +793,6 @@ section {
   color: #928673;
 }
 
-/* View All / View PDF button — solid variant */
-.pub-card .link-btn,
-a.link-btn {
-  background: #1c79a2;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 0;
-}
-
-.pub-card .link-btn:hover,
-a.link-btn:hover {
-  background: #155f82;
-  color: #fff;
-}
-
-/* "View All" centered CTA below pub list */
-.pub-cta {
-  text-align: center;
-  margin-top: 36px;
-}
-
-.pub-cta a {
-  font-size: 1rem;
-  padding: 14px 36px;
-}
-
 
 /* ============================================================
    12. TESTIMONIALS
@@ -843,7 +815,7 @@ a.link-btn:hover {
 .testimonial-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 50px rgba(0,0,0,0.12);
   padding: 48px;
   margin: 0 auto;
   max-width: 800px;
@@ -893,13 +865,15 @@ a.link-btn:hover {
 @media (max-width: 768px) {
   .testimonial-card blockquote {
     font-size: 1.1rem;
-    -webkit-line-clamp: 6;
   }
 }
 
 @media (max-width: 640px) {
   .testimonials-container {
     overflow: visible;
+  }
+  .testimonial-card blockquote {
+    -webkit-line-clamp: 6;
   }
   .testimonials-slider {
     overflow: hidden;
@@ -932,9 +906,8 @@ a.link-btn:hover {
   font-size: 0.85rem;
 }
 
-/* Nav controls — shared by testimonials AND scholars */
-.testimonials-nav,
-.scholars-nav {
+/* Nav controls — shared by testimonials and scholars sliders */
+.testimonials-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -945,14 +918,14 @@ a.link-btn:hover {
 .testimonials-btn {
   background: #fff !important;
   border: none !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
   border-radius: 50% !important;
   width: 44px !important;
   height: 44px !important;
   padding: 0 !important;
   color: #1c79a2;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -960,8 +933,9 @@ a.link-btn:hover {
 
 .testimonials-btn:hover {
   background: #1c79a2 !important;
-  box-shadow: 0 4px 16px rgba(28, 121, 162, 0.3) !important;
+  box-shadow: 0 4px 16px rgba(28,121,162,0.3) !important;
   color: #fff;
+  transform: none;
 }
 
 .testimonials-btn svg {
@@ -976,9 +950,10 @@ a.link-btn:hover {
 
 .testimonials-btn:disabled {
   background: #fff !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
   color: #dedede;
   cursor: not-allowed;
+  transform: none;
 }
 
 .testimonials-dots {
@@ -1017,6 +992,10 @@ a.link-btn:hover {
     width: 40px !important;
     height: 40px !important;
   }
+  .testimonials-btn svg {
+    width: 20px;
+    height: 20px;
+  }
   .testimonial-dot {
     width: 10px;
     height: 10px;
@@ -1038,6 +1017,7 @@ a.link-btn:hover {
 }
 
 .gallery-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #211f1b;
@@ -1048,6 +1028,7 @@ a.link-btn:hover {
 
 .gallery-intro {
   text-align: center;
+  font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 0.85rem;
   color: #928673;
   max-width: 500px;
@@ -1063,6 +1044,7 @@ a.link-btn:hover {
   margin-bottom: 1.75rem;
   background: #f5f5f0;
   border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.00);
   padding: 6px;
   width: fit-content;
   margin-left: auto;
@@ -1075,27 +1057,31 @@ a.link-btn:hover {
   justify-content: center;
   align-items: center;
   gap: 6px;
+  align-self: stretch;
   background: transparent;
   border-radius: 10px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(0,0,0,0.00);
+  box-shadow: none;
+  font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   color: #211f1b;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
 }
 
 .gallery-tab:hover:not(.active) {
-  background: rgba(28, 121, 162, 0.08);
+  background: rgba(28,121,162,0.08);
   color: #1c79a2;
 }
 
 .gallery-tab.active {
-  background: #1c79a2;
   border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  color: #fff;
+  border: 1px solid rgba(0,0,0,0.00);
+  background: #1c79a2;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.06);
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -1133,8 +1119,6 @@ a.link-btn:hover {
   object-fit: cover;
   object-position: top center;
   display: block;
-  position: relative;
-  z-index: 1;
   transition: transform 0.35s ease;
 }
 
@@ -1142,7 +1126,12 @@ a.link-btn:hover {
   transform: scale(1.04);
 }
 
-/* Placeholder checkerboard for broken images */
+/* Placeholder checkerboard for broken/missing images */
+.gallery-item img[src=""],
+.gallery-item img:not([src]) {
+  opacity: 0;
+}
+
 .gallery-item::before {
   content: '';
   position: absolute;
@@ -1153,9 +1142,14 @@ a.link-btn:hover {
           linear-gradient(45deg, transparent 75%, #ddd 75%),
           linear-gradient(-45deg, transparent 75%, #ddd 75%);
   background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   background-color: #e8e6e0;
   z-index: 0;
+}
+
+.gallery-item img {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 640px) {
@@ -1186,15 +1180,33 @@ a.link-btn:hover {
    14. AWARDS
    ============================================================ */
 .awards-index-section {
+  padding: 80px 0 90px;
   background: #f5f5f0;
-  /* padding inherited from #timeline ~ section rules above */
 }
 
-.awards-index-section .section-title {
-  margin-bottom: 48px;
+.awards-index-section .section-label {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1c79a2;
+  margin-bottom: 10px;
 }
 
-/* 2-column grid of award rows */
+.awards-index-section h2 {
+  text-align: center;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.awards-index-section .section-sub {
+  font-size: 1rem;
+  color: #211f1b;
+  text-align: center;
+}
+
 .awards-index-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1210,14 +1222,14 @@ a.link-btn:hover {
   background: #fff;
   border-radius: 12px;
   padding: 18px 24px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow .2s, transform .2s;
 }
 
 .award-index-card:hover {
-  box-shadow: 0 4px 16px rgba(28, 121, 162, 0.12);
+  box-shadow: 0 4px 16px rgba(28,121,162,.12);
   transform: translateY(-1px);
 }
 
@@ -1260,7 +1272,7 @@ a.link-btn:hover {
   color: #1c79a2;
   flex-shrink: 0;
   opacity: 0;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity .2s, transform .2s;
 }
 
 .award-index-card:hover .award-index-arrow {
@@ -1336,7 +1348,7 @@ footer {
 .footer-bottom {
   max-width: 1152px;
   margin: 0 auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
   padding-top: 24px;
   text-align: center;
   font-size: 0.85rem;
@@ -1347,7 +1359,7 @@ footer {
    16. SLICK OVERRIDES
    ============================================================ */
 
-/* Hide Slick's default arrows on testimonials track only */
+/* Hide Slick's built-in arrows on testimonials only */
 .testimonials-track .slick-prev,
 .testimonials-track .slick-next {
   display: none !important;
