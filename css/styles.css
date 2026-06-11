@@ -1,4 +1,30 @@
-/* Reset and Base Styles */
+/* ============================================================
+   Dr. Arthur Furst — Memorial Website
+   styles.css — Complete Stylesheet
+   ============================================================
+   TABLE OF CONTENTS
+   1.  Reset & Base
+   2.  Navigation
+   3.  Hero — Desktop
+   4.  Hero — Mobile
+   5.  General Layout
+   6.  Section Titles (shared)
+   7.  Biography
+   8.  Timeline
+   9.  Accomplishments
+   10. Scholarships
+   11. Publications
+   12. Testimonials
+   13. Gallery
+   14. Awards
+   15. Footer
+   16. Slick Overrides
+   ============================================================ */
+
+
+/* ============================================================
+   1. RESET & BASE
+   ============================================================ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,13 +37,16 @@ body {
   background: #fff;
 }
 
-/* Navigation */
+
+/* ============================================================
+   2. NAVIGATION
+   ============================================================ */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #e5e7eb;
   z-index: 50;
@@ -46,7 +75,10 @@ nav a:hover {
   color: #1c79a2;
 }
 
-/* Hero Desktop */
+
+/* ============================================================
+   3. HERO — DESKTOP
+   ============================================================ */
 .hero-desktop {
   display: none;
   position: relative;
@@ -58,7 +90,6 @@ nav a:hover {
   .hero-desktop {
     display: block;
   }
-
   .hero-mobile {
     display: none;
   }
@@ -86,17 +117,11 @@ nav a:hover {
   overflow: hidden;
   z-index: 1;
 }
+
 .film-scroll {
   display: flex;
   width: max-content;
   height: 148px;
-  will-change: transform;
-}
-
-.film-scroll-mobile {
-  display: flex;
-  width: max-content;
-  height: 110px;
   will-change: transform;
 }
 
@@ -107,7 +132,7 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
-  margin-right: 10px
+  margin-right: 10px;
 }
 
 .hero-portrait {
@@ -159,7 +184,10 @@ nav a:hover {
   max-width: 440px;
 }
 
-/* Hero Mobile */
+
+/* ============================================================
+   4. HERO — MOBILE
+   ============================================================ */
 .hero-mobile {
   position: relative;
   overflow: hidden;
@@ -212,6 +240,13 @@ nav a:hover {
   height: 110px;
 }
 
+.film-scroll-mobile {
+  display: flex;
+  width: max-content;
+  height: 110px;
+  will-change: transform;
+}
+
 .film-scroll-mobile img {
   flex-shrink: 0;
   width: 140px;
@@ -219,20 +254,24 @@ nav a:hover {
   object-fit: cover;
   object-position: top center;
   border-radius: 8px;
-  margin-right: 10px
+  margin-right: 10px;
 }
-/* General Layout */
+
+
+/* ============================================================
+   5. GENERAL LAYOUT
+   ============================================================ */
 section {
   padding: 48px 16px;
 }
 
 @media (min-width: 768px) {
   section {
-    padding: 0px 50px;
+    padding: 0 50px;
   }
 }
 
-/* Add padding top and bottom to all sections starting from A Life of Discovery */
+/* All sections from Timeline onward get vertical padding on desktop */
 #timeline,
 #timeline ~ section {
   padding-top: 48px;
@@ -252,24 +291,66 @@ section {
   margin: 0 auto;
 }
 
+
+/* ============================================================
+   6. SECTION TITLES (shared across all sections)
+   ============================================================ */
 .section-title {
   text-align: center;
   margin-bottom: 48px;
 }
 
+/* Default: blue heading */
 .section-title h2 {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   margin-bottom: 16px;
-  color:#1c79a2;
+  color: #1c79a2;
 }
 
+/* Default: dark body text */
 .section-title p {
   font-size: 1rem;
   color: #211f1b;
 }
 
-/* Biography Section */
+/* Exception: Accomplishments card — white on blue background */
+.accomplishments-card .section-title h2 {
+  color: #fff;
+}
+
+.accomplishments-card .section-title p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Exception: Scholarships subtitle needs max-width centering */
+#scholarships .section-title p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Shared link/button style */
+.link-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1c79a2;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 1rem;
+  margin-top: 24px;
+  transition: color 0.2s;
+}
+
+.link-btn:hover {
+  color: #155a7a;
+}
+
+
+/* ============================================================
+   7. BIOGRAPHY
+   ============================================================ */
 .bio-card {
   background: #f5f5f0;
   border-radius: 40px;
@@ -295,6 +376,7 @@ section {
   }
 }
 
+/* Bio heading is dark — lives inside a card, not a .section-title */
 .bio-grid h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -332,22 +414,10 @@ section {
   border-radius: 16px;
 }
 
-.link-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #1c79a2;
-  font-weight: 600;
-  text-decoration: underline;
-  font-size: 1rem;
-  margin-top: 24px;
-  transition: color 0.2s;
-}
 
-.link-btn:hover {
-  color: #155a7a;
-}
-/* Timeline Section */
+/* ============================================================
+   8. TIMELINE
+   ============================================================ */
 .timeline-wrapper {
   position: relative;
 }
@@ -427,7 +497,6 @@ section {
   .timeline-item-inner {
     display: none;
   }
-
   .timeline-mobile {
     display: flex;
     gap: 16px;
@@ -519,7 +588,11 @@ section {
   color: #211f1b;
   line-height: 1.6;
 }
-/* Accomplishments Section */
+
+
+/* ============================================================
+   9. ACCOMPLISHMENTS
+   ============================================================ */
 .accomplishments-card {
   background: #1c79a2;
   border-radius: 40px;
@@ -531,14 +604,6 @@ section {
     padding: 32px 24px;
     border-radius: 24px;
   }
-}
-
-.accomplishments-card .section-title h2 {
-  color: #fff;
-}
-
-.accomplishments-card .section-title p {
-  color: rgba(255,255,255,0.9);
 }
 
 .stats-grid {
@@ -554,7 +619,7 @@ section {
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 24px;
   text-align: center;
@@ -574,17 +639,18 @@ section {
 }
 
 
-/* Scholarship Section */
+/* ============================================================
+   10. SCHOLARSHIPS
+   ============================================================ */
 .scholars-slider-wrap {
   position: relative;
-  /* clip the bleeding right card */
 }
 
 @media (min-width: 641px) {
   .scholars-slider-wrap {
     margin: 0;
     padding: 0;
-    overflow: visible;    /* desktop: let arrows show */
+    overflow: visible;
   }
 }
 
@@ -599,14 +665,14 @@ section {
 .scholar-card {
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scholar-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
 }
 
 .scholar-card img {
@@ -652,6 +718,7 @@ section {
   background: #155f82 !important;
   color: #fff !important;
 }
+
 .scholars-nav {
   display: flex;
   justify-content: center;
@@ -660,10 +727,15 @@ section {
 }
 
 @media (max-width: 640px) {
-  .scholars-nav { display: none; }
+  .scholars-nav {
+    display: none;
+  }
 }
 
-/* Publications Section */
+
+/* ============================================================
+   11. PUBLICATIONS
+   ============================================================ */
 .pub-list {
   display: flex;
   flex-direction: column;
@@ -674,7 +746,7 @@ section {
   background: #fff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s;
   display: flex;
   flex-direction: column;
@@ -682,7 +754,7 @@ section {
 }
 
 .pub-card:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -714,13 +786,52 @@ section {
   color: #928673;
 }
 
-/* Testimonials Slider Section */
+/* View All / View PDF button — solid variant */
+.pub-card .link-btn,
+a.link-btn {
+  background: #1c79a2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0;
+}
+
+.pub-card .link-btn:hover,
+a.link-btn:hover {
+  background: #155f82;
+  color: #fff;
+}
+
+/* "View All" centered CTA below pub list */
+.pub-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.pub-cta a {
+  font-size: 1rem;
+  padding: 14px 36px;
+}
+
+
+/* ============================================================
+   12. TESTIMONIALS
+   ============================================================ */
 .testimonials-slider {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
 }
-.testimonial-slide{
+
+.testimonial-slide {
   margin-bottom: 20px;
 }
 
@@ -732,10 +843,13 @@ section {
 .testimonial-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.12);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
   padding: 48px;
   margin: 0 auto;
   max-width: 800px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
@@ -763,8 +877,6 @@ section {
   color: #211f1b;
   line-height: 1.7;
   margin-bottom: 16px;
-
-  /* Collapsed state */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -778,6 +890,22 @@ section {
   -webkit-line-clamp: unset;
 }
 
+@media (max-width: 768px) {
+  .testimonial-card blockquote {
+    font-size: 1.1rem;
+    -webkit-line-clamp: 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-container {
+    overflow: visible;
+  }
+  .testimonials-slider {
+    overflow: hidden;
+  }
+}
+
 .testimonial-read-more {
   background: none;
   border: none;
@@ -788,30 +916,6 @@ section {
   padding: 0;
   margin-bottom: 16px;
   text-decoration: underline;
-}
-
-.testimonial-card {
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 640px) {
-  .testimonials-container {
-    overflow: visible;
-  }
-
-  .testimonial-card blockquote {
-    -webkit-line-clamp: 6;
-  }
-
-  .testimonials-slider {
-    overflow: hidden;
-  }
-}
-@media (max-width: 768px) {
-  .testimonial-card blockquote {
-    font-size: 1.1rem;
-  }
 }
 
 .testimonial-author p:first-child {
@@ -828,8 +932,9 @@ section {
   font-size: 0.85rem;
 }
 
-/* Navigation Controls */
-.testimonials-nav {
+/* Nav controls — shared by testimonials AND scholars */
+.testimonials-nav,
+.scholars-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -840,14 +945,14 @@ section {
 .testimonials-btn {
   background: #fff !important;
   border: none !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
   border-radius: 50% !important;
   width: 44px !important;
   height: 44px !important;
   padding: 0 !important;
   color: #1c79a2;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -855,9 +960,8 @@ section {
 
 .testimonials-btn:hover {
   background: #1c79a2 !important;
-  box-shadow: 0 4px 16px rgba(28,121,162,0.3) !important;
+  box-shadow: 0 4px 16px rgba(28, 121, 162, 0.3) !important;
   color: #fff;
-  transform: none;
 }
 
 .testimonials-btn svg {
@@ -872,13 +976,11 @@ section {
 
 .testimonials-btn:disabled {
   background: #fff !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
   color: #dedede;
   cursor: not-allowed;
-  transform: none;
 }
 
-/* Dots Navigation */
 .testimonials-dots {
   display: flex;
   gap: 8px;
@@ -906,30 +1008,281 @@ section {
   transform: scale(1.2);
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .testimonials-nav {
     gap: 16px;
     margin: 24px;
   }
-
   .testimonials-btn {
-    width: 40px;
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
   }
-
-  .testimonials-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-
   .testimonial-dot {
     width: 10px;
     height: 10px;
   }
 }
 
-/* Footer */
+
+/* ============================================================
+   13. GALLERY
+   ============================================================ */
+.gallery-section {
+  background: #ffffff;
+  padding: 4rem 2rem 5rem;
+}
+
+.gallery-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #211f1b;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.gallery-intro {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #928673;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.75rem;
+  background: #f5f5f0;
+  border-radius: 14px;
+  padding: 6px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-tab {
+  display: flex;
+  padding: 12px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #211f1b;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.gallery-tab:hover:not(.active) {
+  background: rgba(28, 121, 162, 0.08);
+  color: #1c79a2;
+}
+
+.gallery-tab.active {
+  background: #1c79a2;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  color: #fff;
+  font-weight: 600;
+}
+
+.gallery-grid {
+  position: relative;
+}
+
+.gallery-panel {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  animation: galleryFadeIn 0.3s ease;
+}
+
+.gallery-panel.active {
+  display: grid;
+}
+
+@keyframes galleryFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e8e6e0;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Placeholder checkerboard for broken images */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+          linear-gradient(45deg, #ddd 25%, transparent 25%),
+          linear-gradient(-45deg, #ddd 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #ddd 75%),
+          linear-gradient(-45deg, transparent 75%, #ddd 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-color: #e8e6e0;
+  z-index: 0;
+}
+
+@media (max-width: 640px) {
+  .gallery-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    border-radius: 10px;
+    gap: 14px;
+  }
+  .gallery-tab {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+  }
+  .gallery-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+  }
+  .gallery-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* ============================================================
+   14. AWARDS
+   ============================================================ */
+.awards-index-section {
+  background: #f5f5f0;
+  /* padding inherited from #timeline ~ section rules above */
+}
+
+.awards-index-section .section-title {
+  margin-bottom: 48px;
+}
+
+/* 2-column grid of award rows */
+.awards-index-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.award-index-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.award-index-card:hover {
+  box-shadow: 0 4px 16px rgba(28, 121, 162, 0.12);
+  transform: translateY(-1px);
+}
+
+.award-index-year {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1c79a2;
+  min-width: 46px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.award-index-divider {
+  width: 1px;
+  height: 36px;
+  background: #e0e0d8;
+  flex-shrink: 0;
+}
+
+.award-index-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.award-index-info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #211f1b;
+  margin: 0 0 2px;
+  line-height: 1.35;
+}
+
+.award-index-info p {
+  font-size: 0.82rem;
+  color: #888;
+  margin: 0;
+}
+
+.award-index-arrow {
+  color: #1c79a2;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.award-index-card:hover .award-index-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.awards-index-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .awards-index-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   15. FOOTER
+   ============================================================ */
 footer {
   background: #1c79a2;
   color: #fff;
@@ -983,322 +1336,23 @@ footer {
 .footer-bottom {
   max-width: 1152px;
   margin: 0 auto;
-  border-top: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 24px;
   text-align: center;
   font-size: 0.85rem;
 }
 
-/* ══════════════════════════════
-   gallery.css
-   A Life in Pictures — Tab Gallery
-   Colors: #1C79A2 (teal), #211F1B (black),
-           #928673 (brown), #F5F5F0 (warm-bg)
-   Font: Be Vietnam Pro
-══════════════════════════════ */
 
-/* ── Section wrapper ── */
-.gallery-section {
-  background: #ffffff;
-  padding: 4rem 2rem 5rem;
-}
+/* ============================================================
+   16. SLICK OVERRIDES
+   ============================================================ */
 
-.gallery-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ── Title & intro ── */
-.gallery-title {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #211F1B;
-  text-align: center;
-  margin-bottom: 0.4rem;
-  line-height: 1.2;
-}
-
-.gallery-intro {
-  text-align: center;
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 0.85rem;
-  color: #928673;
-  max-width: 500px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-}
-
-/* ── Tab bar container ── */
-.gallery-tabs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 1.75rem;
-
-  /* Pill container background */
-  background: #F5F5F0;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.00);
-  padding: 6px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Individual tab button ── */
-.gallery-tab {
-  display: flex;
-  padding: 12px 18px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  align-self: stretch;
-
-  /* Default (inactive) state */
-  background: transparent;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.00);
-  box-shadow: none;
-
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #211F1B;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-  white-space: nowrap;
-}
-
-.gallery-tab:hover:not(.active) {
-  background: rgba(28, 121, 162, 0.08);
-  color: #1C79A2;
-}
-
-/* ── Active tab ── */
-.gallery-tab.active {
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.00);
-  background: #1C79A2;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* ── Grid wrapper ── */
-.gallery-grid {
-  position: relative;
-}
-
-/* ── Tab panels ── */
-.gallery-panel {
-  display: none;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  animation: galleryFadeIn 0.3s ease;
-}
-
-.gallery-panel.active {
-  display: grid;
-}
-
-@keyframes galleryFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── Individual image cards ── */
-.gallery-item {
-  aspect-ratio: 1 / 1;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #E8E6E0;
-  position: relative;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-  transition: transform 0.35s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.04);
-}
-
-/* Placeholder checkerboard when no image loads */
-.gallery-item img[src=""],
-.gallery-item img:not([src]) {
-  opacity: 0;
-}
-
-.gallery-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(45deg, #ddd 25%, transparent 25%),
-    linear-gradient(-45deg, #ddd 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #ddd 75%),
-    linear-gradient(-45deg, transparent 75%, #ddd 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  background-color: #e8e6e0;
-  z-index: 0;
-}
-
-.gallery-item img {
-  position: relative;
-  z-index: 1;
-}
-
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .gallery-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    border-radius: 10px;
-    gap: 14px;
-  }
-
-  .gallery-tab {
-    padding: 10px 8px;
-    font-size: 0.8rem;
-    text-align: center;
-    width: 100%;
-  }
-
-  .gallery-panel {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 7px;
-  }
-
-  .gallery-title {
-    font-size: 1.5rem;
-  }
-}
-
-/* ══════════════════════════════
-   SLICK OVERRIDES
-══════════════════════════════ */
-
-/* ══ SLICK OVERRIDES ══ */
+/* Hide Slick's default arrows on testimonials track only */
 .testimonials-track .slick-prev,
-.testimonials-track .slick-next { display: none !important; }
-
-.testimonials-track { will-change: transform; }
-
-
-/* ══ AWARDS SECTION ══ */
-
-.awards-index-section {
-  padding: 80px 0 90px;
-  background: #f5f5f0;
+.testimonials-track .slick-next {
+  display: none !important;
 }
 
-.awards-index-section .section-label {
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #1c79a2;
-  margin-bottom: 10px;
-}
-
-.awards-index-section h2 {
-  text-align: center;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.awards-index-section .section-sub {
-  font-size: 1rem;
-  color: #211f1b;
-}
-
-/* 2-column grid */
-.awards-index-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.award-index-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 18px 24px;
-  box-shadow: 0 1px 6px rgba(0,0,0,.06);
-  text-decoration: none;
-  color: inherit;
-  transition: box-shadow .2s, transform .2s;
-}
-.award-index-card:hover {
-  box-shadow: 0 4px 16px rgba(28,121,162,.12);
-  transform: translateY(-1px);
-}
-
-.award-index-year {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #1c79a2;
-  min-width: 46px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.award-index-divider {
-  width: 1px;
-  height: 36px;
-  background: #e0e0d8;
-  flex-shrink: 0;
-}
-
-.award-index-info {
-  flex: 1;
-  min-width: 0;
-}
-.award-index-info h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #211f1b;
-  margin: 0 0 2px;
-  line-height: 1.35;
-}
-.award-index-info p {
-  font-size: 0.82rem;
-  color: #888;
-  margin: 0;
-}
-
-.award-index-arrow {
-  color: #1c79a2;
-  flex-shrink: 0;
-  opacity: 0;
-  transition: opacity .2s, transform .2s;
-}
-.award-index-card:hover .award-index-arrow {
-  opacity: 1;
-  transform: translateX(2px);
-}
-
-/* View All CTA */
-.awards-index-cta {
-  text-align: center;
-  margin-top: 40px;
-}
-
-@media (max-width: 700px) {
-  .awards-index-grid { grid-template-columns: 1fr; }
+.testimonials-track {
+  will-change: transform;
 }
