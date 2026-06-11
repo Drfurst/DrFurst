@@ -308,17 +308,16 @@ section {
   color: #1c79a2;
 }
 
-.section-title p {
-  font-size: 1rem;
-  color: #211f1b;
-}
-
 h4.eyebrow {
   font-size: 20px;
   color: #1c79a2;
   text-transform:uppercase;
   text-align: center;
   padding-bottom: 10px;
+}
+.section-title p {
+  font-size: 1rem;
+  color: #211f1b;
 }
 
 /* Exception: Accomplishments card — white text on blue background */
@@ -337,7 +336,7 @@ h4.eyebrow {
   margin-right: auto;
 }
 
-/* Link button — text style, used for Bio Read More toggle */
+/* Link button — text style, used for Bio Read More toggle and View All CTAs */
 .link-btn {
   background: none;
   border: none;
@@ -352,6 +351,30 @@ h4.eyebrow {
 
 .link-btn:hover {
   color: #155a7a;
+}
+
+/* Solid blue button — scoped to pub cards only, no HTML changes needed */
+.pub-card .link-btn,
+.pub-list .link-btn {
+  background: #1c79a2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0;
+}
+
+.pub-card .link-btn:hover,
+.pub-list .link-btn:hover {
+  background: #155f82;
+  color: #fff;
 }
 
 
