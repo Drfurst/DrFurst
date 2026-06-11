@@ -309,7 +309,7 @@ section {
 }
 
 h4.eyebrow {
-  font-size: 20px;
+  font-size: 16px;
   color: #1c79a2;
   text-transform:uppercase;
   text-align: center;
@@ -353,7 +353,7 @@ h4.eyebrow {
   color: #155a7a;
 }
 
-/* Solid blue button — scoped to pub cards only, no HTML changes needed */
+/* Solid blue button */
 .pub-card .link-btn,
 .pub-list .link-btn {
   background: #1c79a2;
@@ -1222,6 +1222,7 @@ h4.eyebrow {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   margin-bottom: 10px;
+  color: #211f1b;
 }
 
 .awards-index-section .section-sub {
