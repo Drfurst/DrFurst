@@ -3,599 +3,654 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Awards & Accomplishments – Dr. Arthur Furst</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Awards &amp; Accomplishments &mdash; Dr. Arthur Furst</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* ── Page hero ── */
-        .awards-hero {
-            background: linear-gradient(135deg, #1a2a1a 0%, #2d4a2d 60%, #1a2a1a 100%);
-            color: #fff;
-            padding: 80px 0 60px;
+        .articles-hero {
+            background: #f5f5f0;
+            padding: 72px 24px 48px;
             text-align: center;
+            border-bottom: 1px solid #e5e5e0;
         }
-        .awards-hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        .awards-hero p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            max-width: 560px;
-            margin: 0 auto;
-        }
+        .articles-hero h1 { color: #1c79a2; margin-bottom: 12px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+        .articles-hero p  { color: #555; max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
 
-        /* ── Filter bar ── */
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: #1c79a2; font-size: 0.9rem; font-weight: 600;
+            text-decoration: none; margin-bottom: 24px;
+            transition: opacity .2s;
+        }
+        .back-link:hover { opacity: .7; }
+
+        /* Filter bar */
         .filter-bar {
-            background: #f7f4ef;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .filter-bar .container {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .filter-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-right: 6px;
+            display: flex; flex-wrap: wrap; gap: 10px;
+            justify-content: center; padding: 32px 24px 0;
         }
         .filter-btn {
-            background: #fff;
-            border: 1.5px solid #ccc;
-            border-radius: 20px;
-            padding: 6px 18px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #333;
-            font-weight: 500;
+            background: #fff; border: 1.5px solid #d0d0c8;
+            border-radius: 20px; padding: 6px 18px;
+            font-size: 0.88rem; font-weight: 600; cursor: pointer;
+            color: #444; transition: all .2s;
         }
-        .filter-btn:hover { border-color: #2d4a2d; color: #2d4a2d; }
-        .filter-btn.active {
-            background: #2d4a2d;
-            border-color: #2d4a2d;
-            color: #fff;
+        .filter-btn:hover, .filter-btn.active {
+            background: #1c79a2; border-color: #1c79a2; color: #fff;
         }
 
-        /* ── Main content ── */
-        .awards-content {
-            padding: 60px 0 80px;
-            background: #fafaf8;
+        /* Category sections */
+        .decade-section { padding: 0 24px; max-width: 900px; margin: 0 auto; }
+        .decade-label {
+            font-size: 1.35rem; font-weight: 800; color: #1c79a2;
+            margin: 48px 0 16px; padding-bottom: 10px;
+            border-bottom: 2px solid #d6eaf4;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .decade-label span.count {
+            font-size: 0.75rem; font-weight: 600; background: #e8f4fb;
+            color: #1c79a2; border-radius: 10px; padding: 2px 10px;
         }
 
-        /* ── Category groups ── */
-        .awards-group {
-            margin-bottom: 64px;
+        /* Award cards */
+        .pub-list { display: flex; flex-direction: column; gap: 12px; }
+        .pub-card {
+            display: flex; align-items: center; gap: 20px;
+            background: #fff; border-radius: 12px;
+            padding: 18px 24px; box-shadow: 0 1px 6px rgba(0,0,0,.06);
+            transition: box-shadow .2s, transform .2s;
         }
-        .group-heading {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 28px;
+        .pub-card:hover { box-shadow: 0 4px 16px rgba(28,121,162,.12); transform: translateY(-1px); }
+        .pub-year {
+            font-size: 1.1rem; font-weight: 800; color: #1c79a2;
+            min-width: 52px; text-align: center;
         }
-        .group-heading h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #1a2a1a;
-            white-space: nowrap;
+        .pub-info { flex: 1; }
+        .pub-info h3 { font-size: 0.97rem; font-weight: 600; color: #211f1b; margin-bottom: 2px; }
+        .pub-info p  { font-size: 0.82rem; color: #888; margin: 0; }
+        .link-btn {
+            display: inline-block; background: #1c79a2; color: #fff;
+            border: none; border-radius: 8px; padding: 8px 16px;
+            font-size: 0.82rem; font-weight: 600; white-space: nowrap;
+            cursor: pointer; text-decoration: none; transition: background .2s;
         }
-        .group-heading::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #d0c8b8;
-        }
+        .link-btn:hover { background: #155f82; }
 
-        /* ── Award cards grid ── */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        .undated-label { color: #888; border-color: #e0e0d8; }
+        .undated-label span.count { background: #f0f0ea; color: #888; }
 
-        .award-card {
-            background: #fff;
-            border: 1px solid #e5e0d8;
-            border-radius: 10px;
-            padding: 22px 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-        .award-card:hover {
-            box-shadow: 0 6px 24px rgba(0,0,0,0.10);
-            transform: translateY(-2px);
-        }
-        .award-card.has-link { cursor: pointer; }
-
-        .award-year {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #fff;
-            background: #2d4a2d;
-            border-radius: 4px;
-            padding: 2px 9px;
-            align-self: flex-start;
-        }
-        .award-title {
-            font-size: 0.97rem;
-            font-weight: 600;
-            color: #1a2a1a;
-            line-height: 1.4;
-        }
-        .award-action {
-            margin-top: auto;
-            padding-top: 10px;
-        }
-        .award-action a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: #2d4a2d;
-            text-decoration: none;
-            border: 1.5px solid #2d4a2d;
-            border-radius: 6px;
-            padding: 5px 14px;
-            transition: all 0.2s;
-        }
-        .award-action a:hover {
-            background: #2d4a2d;
-            color: #fff;
-        }
-        .award-action a svg {
-            width: 13px; height: 13px; flex-shrink: 0;
-        }
-
-        /* ── Empty state ── */
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: #888;
-            display: none;
-        }
-
-        /* ── Back link ── */
-        .back-bar {
-            background: #1a2a1a;
-            padding: 14px 0;
-        }
-        .back-bar a {
-            color: #a8c5a8;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.2s;
-        }
-        .back-bar a:hover { color: #fff; }
+        .articles-footer-gap { padding-bottom: 64px; }
 
         @media (max-width: 600px) {
-            .awards-grid { grid-template-columns: 1fr; }
-            .filter-bar .container { gap: 8px; }
-            .filter-btn { padding: 5px 14px; font-size: 0.8rem; }
+            .pub-card { flex-wrap: wrap; gap: 12px; }
+            .pub-year  { min-width: auto; }
+            .link-btn  { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-<!-- Nav (matches site nav) -->
-<nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="nav-brand">Dr. Arthur Furst</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="awards.html" class="active">Awards</a></li>
-        </ul>
-    </div>
+<nav>
+    <ul>
+        <li><a href="index.html#biography">Biography</a></li>
+        <li><a href="index.html#timeline">Timeline</a></li>
+        <li><a href="index.html#scholarships">Scholarships</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#testimonials">Voices &amp; Memories</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#awards">Awards</a></li>
+    </ul>
 </nav>
 
-<!-- Back bar -->
-<div class="back-bar">
-    <div class="container">
-        <a href="index.html">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M10 3L5 8l5 5"/></svg>
-            Back to Home
-        </a>
-    </div>
-</div>
-
 <!-- Hero -->
-<section class="awards-hero">
-    <div class="container">
-        <h1>Accomplishments, Achievements &amp; Awards</h1>
-        <p>A lifetime of recognition — from Stanford to the U.S. Senate, spanning toxicology, nutrition science, and community leadership.</p>
-    </div>
-</section>
+<div class="articles-hero">
+    <a href="index.html#awards" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Home
+    </a>
+    <h1>Awards &amp; Accomplishments</h1>
+    <p>A lifetime of recognition — degrees, medals, and honors from Stanford to the U.S. Senate, spanning toxicology, nutrition science, and public service.</p>
+</div>
 
 <!-- Filter bar -->
 <div class="filter-bar">
-    <div class="container">
-        <span class="filter-label">Filter:</span>
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="degrees">Degrees &amp; Certificates</button>
-        <button class="filter-btn" data-filter="media">In the Media</button>
-        <button class="filter-btn" data-filter="publications">Publications</button>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="degrees">Degrees &amp; Certificates</button>
+    <button class="filter-btn" data-filter="media">In the Media</button>
+    <button class="filter-btn" data-filter="publications">Publications</button>
+</div>
+
+
+<!-- ══════════════ DEGREES, CERTIFICATES & AWARDS ══════════════ -->
+<div class="decade-section" data-category-section="degrees">
+    <div class="decade-label">Degrees, Certificates &amp; Awards <span class="count">35 items</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year">1937</div>
+            <div class="pub-info">
+                <h3>Bachelor of Arts</h3>
+                <p>Regents of the University of California</p>
+            </div>
+            <a href="assets/awards/1937 Regents of University of CA Bachelor of Arts.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1940</div>
+            <div class="pub-info">
+                <h3>Master of Science in Chemistry</h3>
+                <p>Regents of the University of California</p>
+            </div>
+            <a href="assets/awards/1940 Regents of University of CA Masters in Chemistry degree.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1944</div>
+            <div class="pub-info">
+                <h3>Phi Lambda Upsilon — Member</h3>
+                <p>National Chemistry Honor Society</p>
+            </div>
+            <a href="assets/awards/1944 Phi Lambda Upsilon Member.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1944</div>
+            <div class="pub-info">
+                <h3>Sigma Xi — Associate Member</h3>
+                <p>Stanford University</p>
+            </div>
+            <a href="assets/awards/1944 Sigma Xi Stanford Associate.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1948</div>
+            <div class="pub-info">
+                <h3>Doctor of Philosophy</h3>
+                <p>Leland Stanford Junior University</p>
+            </div>
+            <a href="assets/awards/1948 Leland Stanford Junior University Dr of Philosophy degree.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1954</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>American Association for the Advancement of Science</p>
+            </div>
+            <a href="assets/awards/1954 American Association for the Advancement of Science Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1955</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>American Association for the Advancement of Science</p>
+            </div>
+            <a href="assets/awards/1955 American Association for the Advancement of Science Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1960</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>The New York Academy of Sciences</p>
+            </div>
+            <a href="assets/awards/1960 NY Academy of Sciences Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1966</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>The New York Academy of Sciences</p>
+            </div>
+            <a href="assets/awards/1966 NY Academy of Sciences Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1969</div>
+            <div class="pub-info">
+                <h3>Life Member</h3>
+                <p>American Association for the Advancement of Science</p>
+            </div>
+            <a href="assets/awards/1969 American Association for the Advancement of Science Life Member award. LowRes.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1972</div>
+            <div class="pub-info">
+                <h3>Who's Who in America — 1972–73 Edition</h3>
+                <p>Marquis Who's Who</p>
+            </div>
+            <a href="assets/awards/1972-73 Who's Who in America page1.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1973</div>
+            <div class="pub-info">
+                <h3>Distinguished Teaching Award</h3>
+                <p>University of San Francisco</p>
+            </div>
+            <a href="assets/awards/1973 USF Distinguished Teaching Award.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1975</div>
+            <div class="pub-info">
+                <h3>American Men and Women of Science — Medical Sciences</h3>
+                <p>National Recognition</p>
+            </div>
+            <a href="assets/awards/1975 book - American Men and Women of Science, Medical Sciences. LowRes.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1975</div>
+            <div class="pub-info">
+                <h3>Who's Who in the United States</h3>
+                <p>Marquis Who's Who</p>
+            </div>
+            <a href="assets/awards/1975 Who's Who in US.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1977</div>
+            <div class="pub-info">
+                <h3>Who's Who in Health Care</h3>
+                <p>Marquis Who's Who</p>
+            </div>
+            <a href="assets/awards/1977 Who's Who in Health Care - bookcover. LowRes.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>California Senate Resolution — Official State Commendation</h3>
+                <p>State of California</p>
+            </div>
+            <a href="assets/awards/1978 CA Senate Resolution.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Member of Advisory Committee</h3>
+                <p>U.S. Department of Labor</p>
+            </div>
+            <a href="assets/awards/1978 US Dept of Labor member of Advisory Committee.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Who's Who in Science — 1978–79 Edition</h3>
+                <p>Marquis Who's Who</p>
+            </div>
+            <a href="assets/awards/1978-79 Who's Who in Science - AF 1.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Who's Who in the World — 4th Edition Certificate</h3>
+                <p>Marquis Who's Who</p>
+            </div>
+            <a href="assets/awards/1978-79 Who's Who in the World 4th Edition Certificate.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1983</div>
+            <div class="pub-info">
+                <h3>Honorary Doctor of Science (Sc.D.)</h3>
+                <p>University of San Francisco</p>
+            </div>
+            <a href="assets/awards/1983 USF Dr of Science award.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1984</div>
+            <div class="pub-info">
+                <h3>Diplomate in General Toxicology</h3>
+                <p>Academy of Toxicological Sciences</p>
+            </div>
+            <a href="assets/awards/1984 Academy of Toxicology of Sciences Dimplomate General Toxicology award. LowRes.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>American Institute of Chemists</p>
+            </div>
+            <a href="assets/awards/1986 American Institute of Chemists Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Klaus Schwarz Commemorative Medal</h3>
+                <p>International Trace Elements Research Community</p>
+            </div>
+            <a href="assets/awards/1986 Klaus Schwarz Commemorative Medal.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Member of Board of Directors</h3>
+                <p>Pacific Graduate School of Psychology</p>
+            </div>
+            <a href="assets/awards/1986 Pacific Graduate School of Psychology Member of Board.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1987</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>American College of Nutrition</p>
+            </div>
+            <a href="assets/awards/1987 American College of Nutrition Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>American Men and Women of Science — Outstanding Contributions</h3>
+                <p>National Recognition</p>
+            </div>
+            <a href="assets/awards/1989 American Men and Women of Science for Outstanding Contributions.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1990</div>
+            <div class="pub-info">
+                <h3>15 Years of Service Award</h3>
+                <p>GNLD International</p>
+            </div>
+            <a href="assets/awards/1990 15 Years of Service at GNLD.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1992</div>
+            <div class="pub-info">
+                <h3>Professional Achievement Award — Alumni Award for Excellence</h3>
+                <p>UCLA</p>
+            </div>
+            <a href="assets/awards/1992 UCLA Alumni Award for Excellence. Professional Achievement Award.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1994</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>Academy of Toxicological Sciences</p>
+            </div>
+            <a href="assets/awards/1994 Academy of Toxological Sciences Fellow award.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1994</div>
+            <div class="pub-info">
+                <h3>50 Years of Membership Certificate</h3>
+                <p>American Chemical Society</p>
+            </div>
+            <a href="assets/awards/1994 American Chemical Society - 50 Years of Membership.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1995</div>
+            <div class="pub-info">
+                <h3>20 Years of Service Award</h3>
+                <p>GNLD International</p>
+            </div>
+            <a href="assets/awards/1995 20 Years of Service with GNLD.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1999</div>
+            <div class="pub-info">
+                <h3>Fellow</h3>
+                <p>Academy of Toxicological Sciences</p>
+            </div>
+            <a href="assets/awards/1999 Academy of Toxological Sciences Fellow.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2000</div>
+            <div class="pub-info">
+                <h3>Founding Member Emeritus</h3>
+                <p>GNLD International</p>
+            </div>
+            <a href="assets/awards/2000 GNLD Founding Member Emeritus.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2001</div>
+            <div class="pub-info">
+                <h3>Lifetime Contribution Award</h3>
+                <p>American College of Toxicology</p>
+            </div>
+            <a href="assets/awards/2001 American College of Toxicology Lifetime Contribution plaque.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2004</div>
+            <div class="pub-info">
+                <h3>Lifetime Recognition Award</h3>
+                <p>Presented to Dr. Arthur Furst</p>
+            </div>
+            <a href="assets/awards/2004 Lifetime Recognition Award Presented AF.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>Diamond Circle Member</h3>
+                <p>University of San Francisco</p>
+            </div>
+            <a href="assets/awards/USF Diamond Circle Member.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
     </div>
 </div>
 
-<!-- Main content -->
-<section class="awards-content">
-    <div class="container">
 
-        <!-- ══ DEGREES, CERTIFICATES & AWARDS ══ -->
-        <div class="awards-group" data-category="degrees">
-            <div class="group-heading"><h2>Degrees, Certificates &amp; Awards</h2></div>
-            <div class="awards-grid">
+<!-- ══════════════ IN THE MEDIA ══════════════ -->
+<div class="decade-section" data-category-section="media">
+    <div class="decade-label">In the Media <span class="count">13 items</span></div>
+    <div class="pub-list">
 
-                <div class="award-card has-link">
-                    <span class="award-year">1937</span>
-                    <div class="award-title">Regents of University of California — Bachelor of Arts</div>
-                    <div class="award-action"><a href="assets/awards/1937 Regents of University of CA Bachelor of Arts.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1940</span>
-                    <div class="award-title">Regents of University of California — Masters in Chemistry</div>
-                    <div class="award-action"><a href="assets/awards/1940 Regents of University of CA Masters in Chemistry degree.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1944</span>
-                    <div class="award-title">Phi Lambda Upsilon — Member</div>
-                    <div class="award-action"><a href="assets/awards/1944 Phi Lambda Upsilon Member.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1944</span>
-                    <div class="award-title">Sigma Xi Stanford — Associate Member</div>
-                    <div class="award-action"><a href="assets/awards/1944 Sigma Xi Stanford Associate.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1948</span>
-                    <div class="award-title">Leland Stanford Junior University — Doctor of Philosophy</div>
-                    <div class="award-action"><a href="assets/awards/1948 Leland Stanford Junior University Dr of Philosophy degree.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1954</span>
-                    <div class="award-title">American Association for the Advancement of Science — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1954 American Association for the Advancement of Science Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1955</span>
-                    <div class="award-title">American Association for the Advancement of Science — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1955 American Association for the Advancement of Science Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1960</span>
-                    <div class="award-title">The New York Academy of Sciences — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1960 NY Academy of Sciences Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1966</span>
-                    <div class="award-title">The New York Academy of Sciences — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1966 NY Academy of Sciences Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1969</span>
-                    <div class="award-title">American Association for the Advancement of Science — Life Member</div>
-                    <div class="award-action"><a href="assets/awards/1969 American Association for the Advancement of Science Life Member award. LowRes.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1972</span>
-                    <div class="award-title">Who's Who in America — 1972–73 Edition</div>
-                    <div class="award-action"><a href="assets/awards/1972-73 Who's Who in America page1.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1973</span>
-                    <div class="award-title">University of San Francisco — Distinguished Teaching Award</div>
-                    <div class="award-action"><a href="assets/awards/1973 USF Distinguished Teaching Award.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1975</span>
-                    <div class="award-title">American Men and Women of Science — Medical Sciences Edition</div>
-                    <div class="award-action"><a href="assets/awards/1975 book - American Men and Women of Science, Medical Sciences. LowRes.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1975</span>
-                    <div class="award-title">Who's Who in the United States</div>
-                    <div class="award-action"><a href="assets/awards/1975 Who's Who in US.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1977</span>
-                    <div class="award-title">Who's Who in Health Care</div>
-                    <div class="award-action"><a href="assets/awards/1977 Who's Who in Health Care - bookcover. LowRes.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1978</span>
-                    <div class="award-title">California Senate Resolution — Commendation</div>
-                    <div class="award-action"><a href="assets/awards/1978 CA Senate Resolution.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1978</span>
-                    <div class="award-title">U.S. Department of Labor — Member of Advisory Committee</div>
-                    <div class="award-action"><a href="assets/awards/1978 US Dept of Labor member of Advisory Committee.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1978</span>
-                    <div class="award-title">Who's Who in Science — 1978–79 Edition</div>
-                    <div class="award-action"><a href="assets/awards/1978-79 Who's Who in Science - AF 1.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1978</span>
-                    <div class="award-title">Who's Who in the World — 4th Edition Certificate</div>
-                    <div class="award-action"><a href="assets/awards/1978-79 Who's Who in the World 4th Edition Certificate.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1983</span>
-                    <div class="award-title">University of San Francisco — Doctor of Science (Sc.D.) Honorary Degree</div>
-                    <div class="award-action"><a href="assets/awards/1983 USF Dr of Science award.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1984</span>
-                    <div class="award-title">Academy of Toxicological Sciences — Diplomate in General Toxicology</div>
-                    <div class="award-action"><a href="assets/awards/1984 Academy of Toxicology of Sciences Dimplomate General Toxicology award. LowRes.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1986</span>
-                    <div class="award-title">American Institute of Chemists — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1986 American Institute of Chemists Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1986</span>
-                    <div class="award-title">Klaus Schwarz Commemorative Medal</div>
-                    <div class="award-action"><a href="assets/awards/1986 Klaus Schwarz Commemorative Medal.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1986</span>
-                    <div class="award-title">Pacific Graduate School of Psychology — Member of Board</div>
-                    <div class="award-action"><a href="assets/awards/1986 Pacific Graduate School of Psychology Member of Board.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1987</span>
-                    <div class="award-title">American College of Nutrition — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1987 American College of Nutrition Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1989</span>
-                    <div class="award-title">American Men and Women of Science — Outstanding Contributions</div>
-                    <div class="award-action"><a href="assets/awards/1989 American Men and Women of Science for Outstanding Contributions.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1990</span>
-                    <div class="award-title">GNLD — 15 Years of Service Award</div>
-                    <div class="award-action"><a href="assets/awards/1990 15 Years of Service at GNLD.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1992</span>
-                    <div class="award-title">UCLA Alumni Award for Excellence — Professional Achievement Award</div>
-                    <div class="award-action"><a href="assets/awards/1992 UCLA Alumni Award for Excellence. Professional Achievement Award.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1994</span>
-                    <div class="award-title">Academy of Toxicological Sciences — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1994 Academy of Toxological Sciences Fellow award.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1994</span>
-                    <div class="award-title">American Chemical Society — 50 Years of Membership</div>
-                    <div class="award-action"><a href="assets/awards/1994 American Chemical Society - 50 Years of Membership.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1995</span>
-                    <div class="award-title">GNLD — 20 Years of Service Award</div>
-                    <div class="award-action"><a href="assets/awards/1995 20 Years of Service with GNLD.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1999</span>
-                    <div class="award-title">Academy of Toxicological Sciences — Fellow</div>
-                    <div class="award-action"><a href="assets/awards/1999 Academy of Toxological Sciences Fellow.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2000</span>
-                    <div class="award-title">GNLD — Founding Member Emeritus</div>
-                    <div class="award-action"><a href="assets/awards/2000 GNLD Founding Member Emeritus.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2001</span>
-                    <div class="award-title">American College of Toxicology — Lifetime Contribution Award</div>
-                    <div class="award-action"><a href="assets/awards/2001 American College of Toxicology Lifetime Contribution plaque.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2004</span>
-                    <div class="award-title">Lifetime Recognition Award</div>
-                    <div class="award-action"><a href="assets/awards/2004 Lifetime Recognition Award Presented AF.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">Undated</span>
-                    <div class="award-title">University of San Francisco — Diamond Circle Member</div>
-                    <div class="award-action"><a href="assets/awards/USF Diamond Circle Member.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
+        <div class="pub-card">
+            <div class="pub-year">1977</div>
+            <div class="pub-info">
+                <h3>The Scientist Who Became a Dancer—or Vice Versa</h3>
+                <p>San Francisco Examiner</p>
             </div>
+            <a href="assets/awards/1977 SF Examiner article The Scientist who became a dancer--or vice versa.jpg" target="_blank" class="link-btn">View</a>
         </div>
 
-        <!-- ══ IN THE MEDIA ══ -->
-        <div class="awards-group" data-category="media">
-            <div class="group-heading"><h2>In the Media</h2></div>
-            <div class="awards-grid">
-
-                <div class="award-card has-link">
-                    <span class="award-year">1977</span>
-                    <div class="award-title">San Francisco Examiner — "The Scientist Who Became a Dancer—or Vice Versa"</div>
-                    <div class="award-action"><a href="assets/awards/1977 SF Examiner article The Scientist who became a dancer--or vice versa.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1978</span>
-                    <div class="award-title">Folklore Magazine Viltis — "Who's Who in Folk Dance"</div>
-                    <div class="award-action"><a href="assets/awards/1978 Folklore Magazine Viltis Who's Who in Folk Dance article.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1986</span>
-                    <div class="award-title">Palo Alto Weekly — "Professor Honored for Work"</div>
-                    <div class="award-action"><a href="assets/awards/1986 Article from Palo Alto Weekly - Professor honored for work.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1989</span>
-                    <div class="award-title">American College of Toxicology — Program Pamphlet</div>
-                    <div class="award-action"><a href="assets/awards/1989 American College of Toxicology pamphlet.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1989</span>
-                    <div class="award-title">USF Alumnus — "Furst Refuses to be Slowed by Retirement"</div>
-                    <div class="award-action"><a href="assets/awards/1989 USF Alumnus Furst Refuses to be Slowed by Retirement.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">1995</span>
-                    <div class="award-title">Palo Alto Weekly — "Arthur Furst: The Dance of Life"</div>
-                    <div class="award-action"><a href="assets/awards/1995 Palo Alto Weekly AF- the dance of life.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2001</span>
-                    <div class="award-title">ACT Lifetime Contribution Award — Feature</div>
-                    <div class="award-action"><a href="assets/awards/2001 ACT Lifetime Contribution Award.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2002</span>
-                    <div class="award-title">USF Forum Phoenix — "Quiet Man from 211D"</div>
-                    <div class="award-action"><a href="assets/awards/2002phoenix.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2003</span>
-                    <div class="award-title">San Jose Mercury News — "Toxicology Pioneer's Achievements Saluted"</div>
-                    <div class="award-action"><a href="assets/awards/2003 San Jose Mercury News article Toxicology pioneers achievements sluted.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2003</span>
-                    <div class="award-title">UCLA Fall Newsletter — Feature</div>
-                    <div class="award-action"><a href="assets/awards/2003 UCLA Fall Newsletter.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">2013</span>
-                    <div class="award-title">University of San Francisco — Ten Most Important Innovators in USF History</div>
-                    <div class="award-action"><a href="assets/awards/2013 USF Ten Most Important Innovators in history of USF.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">Undated</span>
-                    <div class="award-title">San Francisco Progress — "Furst to Head Cancer Group"</div>
-                    <div class="award-action"><a href="assets/awards/Article (SF Progress) - Furst to head cancer group.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
-                <div class="award-card has-link">
-                    <span class="award-year">Undated</span>
-                    <div class="award-title">In Honor of Dr. Arthur Furst — Commemorative Program</div>
-                    <div class="award-action"><a href="assets/awards/In Honor of Dr. Arthur Furst program.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l3 3v7H4z"/><path d="M9 4v3h3"/></svg>View PDF</a></div>
-                </div>
-
+        <div class="pub-card">
+            <div class="pub-year">1978</div>
+            <div class="pub-info">
+                <h3>Who's Who in Folk Dance</h3>
+                <p>Folklore Magazine Viltis</p>
             </div>
+            <a href="assets/awards/1978 Folklore Magazine Viltis Who's Who in Folk Dance article.jpg" target="_blank" class="link-btn">View</a>
         </div>
 
-        <!-- ══ PUBLICATIONS ABOUT DR. FURST ══ -->
-        <div class="awards-group" data-category="publications">
-            <div class="group-heading"><h2>Publications About Dr. Furst</h2></div>
-            <div class="awards-grid">
-
-                <div class="award-card has-link">
-                    <span class="award-year">1986</span>
-                    <div class="award-title">Biological Trace Elements Research Vol. 11 — Article on Dr. Arthur Furst</div>
-                    <div class="award-action"><a href="assets/awards/1986 Article on AF in Biological Trace Elemnts Research Vol 11 1st page.jpg" target="_blank"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M6 6h4M6 9h4"/></svg>View</a></div>
-                </div>
-
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Professor Honored for Work</h3>
+                <p>Palo Alto Weekly</p>
             </div>
+            <a href="assets/awards/1986 Article from Palo Alto Weekly - Professor honored for work.jpg" target="_blank" class="link-btn">View</a>
         </div>
 
-        <p class="no-results" id="noResults">No results in this category.</p>
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>American College of Toxicology — Program Pamphlet</h3>
+                <p>American College of Toxicology</p>
+            </div>
+            <a href="assets/awards/1989 American College of Toxicology pamphlet.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1989</div>
+            <div class="pub-info">
+                <h3>Furst Refuses to Be Slowed by Retirement</h3>
+                <p>USF Alumnus</p>
+            </div>
+            <a href="assets/awards/1989 USF Alumnus Furst Refuses to be Slowed by Retirement.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">1995</div>
+            <div class="pub-info">
+                <h3>Arthur Furst: The Dance of Life</h3>
+                <p>Palo Alto Weekly</p>
+            </div>
+            <a href="assets/awards/1995 Palo Alto Weekly AF- the dance of life.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2001</div>
+            <div class="pub-info">
+                <h3>ACT Lifetime Contribution Award — Feature</h3>
+                <p>American College of Toxicology</p>
+            </div>
+            <a href="assets/awards/2001 ACT Lifetime Contribution Award.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2002</div>
+            <div class="pub-info">
+                <h3>Quiet Man from 211D</h3>
+                <p>USF Forum Phoenix</p>
+            </div>
+            <a href="assets/awards/2002phoenix.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2003</div>
+            <div class="pub-info">
+                <h3>Toxicology Pioneer's Achievements Saluted</h3>
+                <p>San Jose Mercury News</p>
+            </div>
+            <a href="assets/awards/2003 San Jose Mercury News article Toxicology pioneers achievements sluted.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2003</div>
+            <div class="pub-info">
+                <h3>UCLA Fall Newsletter — Feature</h3>
+                <p>UCLA</p>
+            </div>
+            <a href="assets/awards/2003 UCLA Fall Newsletter.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year">2013</div>
+            <div class="pub-info">
+                <h3>Ten Most Important Innovators in USF History</h3>
+                <p>University of San Francisco</p>
+            </div>
+            <a href="assets/awards/2013 USF Ten Most Important Innovators in history of USF.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>Furst to Head Cancer Group</h3>
+                <p>San Francisco Progress</p>
+            </div>
+            <a href="assets/awards/Article (SF Progress) - Furst to head cancer group.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+        <div class="pub-card">
+            <div class="pub-year" style="color:#aaa;">—</div>
+            <div class="pub-info">
+                <h3>In Honor of Dr. Arthur Furst — Commemorative Program</h3>
+                <p>Memorial Program</p>
+            </div>
+            <a href="assets/awards/In Honor of Dr. Arthur Furst program.pdf" target="_blank" class="link-btn">View PDF</a>
+        </div>
 
     </div>
-</section>
+</div>
 
-<!-- Footer (matches site footer) -->
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2024 In Memory of Dr. Arthur Furst. All rights reserved.</p>
+
+<!-- ══════════════ PUBLICATIONS ABOUT DR. FURST ══════════════ -->
+<div class="decade-section" data-category-section="publications">
+    <div class="decade-label">Publications About Dr. Furst <span class="count">1 item</span></div>
+    <div class="pub-list">
+
+        <div class="pub-card">
+            <div class="pub-year">1986</div>
+            <div class="pub-info">
+                <h3>Article on Dr. Arthur Furst — First Page</h3>
+                <p>Biological Trace Elements Research, Vol. 11</p>
+            </div>
+            <a href="assets/awards/1986 Article on AF in Biological Trace Elemnts Research Vol 11 1st page.jpg" target="_blank" class="link-btn">View</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="articles-footer-gap"></div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>Dr. Arthur Furst</h3>
+            <p style="margin-bottom:8px;">1916 &ndash; 1999</p>
+            <p>In loving memory of Dr. Arthur Furst, whose pioneering research in toxicology and chemical carcinogenesis continues to protect public health worldwide.</p>
+        </div>
+        <div>
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="index.html#biography">Biography</a></li>
+                <li><a href="index.html#timeline">Timeline</a></li>
+                <li><a href="index.html#scholarships">Scholarship Recipients</a></li>
+                <li><a href="index.html#gallery">Photo Gallery</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="index.html#testimonials">Voices &amp; Memories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Legacy</h3>
+            <ul>
+                <li>Pioneer in Toxicology</li>
+                <li>Cancer Research Leader</li>
+                <li>Educator &amp; Mentor</li>
+                <li>200+ Publications</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 In Memory of Dr. Arthur Furst. This memorial website honors his life and legacy.</p>
     </div>
 </footer>
 
 <script>
-    // Filter logic
     const btns = document.querySelectorAll('.filter-btn');
-    const groups = document.querySelectorAll('.awards-group');
+    const sections = document.querySelectorAll('[data-category-section]');
 
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        groups.forEach(group => {
-          if (filter === 'all' || group.dataset.category === filter) {
-            group.style.display = '';
+        const target = btn.dataset.filter;
+        sections.forEach(sec => {
+          if (target === 'all' || sec.dataset.categorySection === target) {
+            sec.style.display = '';
           } else {
-            group.style.display = 'none';
+            sec.style.display = 'none';
           }
         });
       });
     });
 </script>
+
 </body>
 </html>
