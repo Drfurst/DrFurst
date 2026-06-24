@@ -41,6 +41,9 @@ body {
 /* ============================================================
    2. NAVIGATION
    ============================================================ */
+/* ============================================================
+   2. NAVIGATION
+   ============================================================ */
 nav {
   position: fixed;
   top: 0;
@@ -54,27 +57,58 @@ nav {
 
 nav ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 16px;
+  gap: 8px;
   list-style: none;
   max-width: 1152px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 12px 16px;
 }
 
 nav a {
+  display: inline-block;
   font-weight: 700;
   font-size: 0.95rem;
   color: #211f1b;
   text-decoration: none;
-  transition: color 0.2s;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: color 0.2s, background 0.2s;
 }
 
 nav a:hover {
   color: #1c79a2;
+  background: #e8f4fb;
 }
 
+nav a.nav-active {
+  color: #1c79a2;
+  background: #e8f4fb;
+}
+
+@media (max-width: 767px) {
+  nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav ul {
+    justify-content: flex-start;
+    padding: 10px 16px;
+    width: max-content;
+    min-width: 100%;
+    gap: 6px;
+  }
+  nav a {
+    font-size: 0.88rem;
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+}
 
 /* ============================================================
    3. HERO — DESKTOP
@@ -183,7 +217,33 @@ nav a:hover {
   font-size: 1rem;
   max-width: 440px;
 }
+.hero-quote {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  max-width: 420px;
+  border-left: 3px solid #1c79a2;
+  padding-left: 14px;
+}
 
+.hero-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1c79a2;
+}
+
+@media (max-width: 767px) {
+  .hero-quote {
+    margin: 16px auto 0;
+    max-width: 100%;
+    text-align: left;
+  }
+}
 
 /* ============================================================
    4. HERO — MOBILE

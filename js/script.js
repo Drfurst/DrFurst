@@ -214,3 +214,37 @@ $(document).ready(function() {
     }
   });
 });
+
+/* ── 8. Nav active state on scroll ── */
+(function () {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('nav a[href^="#"]');
+  if (!sections.length || !navLinks.length) return;
+
+  function onScroll() {
+    var scrollY = window.scrollY + 80; // offset for fixed nav height
+    var current = '';
+
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= scrollY) {
+        current = sec.getAttribute('id');
+      }
+    });
+
+    // If at very top, activate Home
+    if (window.scrollY < 100) current = '';
+
+    navLinks.forEach(function (link) {
+      link.classList.remove('nav-active');
+      var href = link.getAttribute('href');
+      if (current === '' && href === '#') {
+        link.classList.add('nav-active');
+      } else if (href === '#' + current) {
+        link.classList.add('nav-active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run once on load
+}());
