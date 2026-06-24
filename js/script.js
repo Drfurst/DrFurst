@@ -216,24 +216,16 @@ $(document).ready(function() {
 });
 
 /* ── 8. Nav active state on scroll ── */
+/* ── 8. Nav active state on scroll ── */
 (function () {
   var sections = document.querySelectorAll('section[id]');
   var navLinks = document.querySelectorAll('nav a[href^="#"]');
   if (!sections.length || !navLinks.length) return;
 
-  function onScroll() {
-    var scrollY = window.scrollY + 80; // offset for fixed nav height
-    var current = '';
+  var isScrollingFromClick = false;
+  var scrollTimer = null;
 
-    sections.forEach(function (sec) {
-      if (sec.offsetTop <= scrollY) {
-        current = sec.getAttribute('id');
-      }
-    });
-
-    // If at very top, activate Home
-    if (window.scrollY < 100) current = '';
-
+  function setActive(current) {
     navLinks.forEach(function (link) {
       link.classList.remove('nav-active');
       var href = link.getAttribute('href');
@@ -245,6 +237,41 @@ $(document).ready(function() {
     });
   }
 
+  function onScroll() {
+    if (isScrollingFromClick) return; // suppress during click-scroll
+
+    var scrollY = window.scrollY + 80;
+    var current = '';
+
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= scrollY) {
+        current = sec.getAttribute('id');
+      }
+    });
+
+    if (window.scrollY < 100) current = '';
+    setActive(current);
+  }
+
+  // On click: immediately set the target as active and suppress scroll tracking
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      var href = link.getAttribute('href');
+      if (href === '#') {
+        setActive('');
+      } else {
+        var id = href.replace('#', '');
+        setActive(id);
+      }
+
+      isScrollingFromClick = true;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        isScrollingFromClick = false;
+      }, 1000); // re-enable after scroll animation finishes
+    });
+  });
+
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load
+  onScroll();
 }());
