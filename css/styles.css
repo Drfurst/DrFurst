@@ -487,6 +487,15 @@ h4.eyebrow {
   margin-bottom: 16px;
 }
 
+.bio-lead {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1c79a2;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
 .bio-img {
   display: none;
 }
