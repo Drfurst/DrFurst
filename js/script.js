@@ -275,3 +275,25 @@ $(document).ready(function() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 }());
+
+/* ── 9. GLightbox init ── */
+document.addEventListener('DOMContentLoaded', function () {
+  var lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: false,
+    closeButton: true,
+    keyboardNavigation: true,
+    descPosition: 'bottom',
+  });
+
+  /* Re-init when gallery tab switches so only active panel photos are grouped */
+  document.querySelectorAll('.gallery-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      setTimeout(function () {
+        lightbox.reload();
+      }, 350);
+    });
+  });
+});
