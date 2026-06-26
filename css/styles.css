@@ -688,7 +688,15 @@ h4.eyebrow {
   line-height: 1.6;
 }
 
-
+.timeline-photo {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 16px;
+  object-fit: cover;
+  object-position: top center;
+  max-height: 220px;
+  display: block;
+}
 /* ============================================================
    9. ACCOMPLISHMENTS
    ============================================================ */
