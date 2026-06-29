@@ -277,18 +277,17 @@ $(document).ready(function() {
 }());
 
 /* ── 9. GLightbox init ── */
+/* ── 9. GLightbox init ── */
 document.addEventListener('DOMContentLoaded', function () {
   var lightbox = GLightbox({
     selector: '.glightbox',
     touchNavigation: true,
     loop: true,
-    autoplayVideos: false,
     closeButton: true,
     keyboardNavigation: true,
-    descPosition: 'bottom',
+    descPosition: 'top',
   });
 
-  /* Re-init when gallery tab switches so only active panel photos are grouped */
   document.querySelectorAll('.gallery-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
       setTimeout(function () {

@@ -1290,27 +1290,20 @@ h4.eyebrow {
   object-fit: contain;
 }
 
-.glightbox-clean .gslide-description {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: auto;
-  background: rgba(0,0,0,0.6);
-  padding: 12px 20px;
-  backdrop-filter: blur(4px);
+.glightbox-clean .gdesc-inner {
+  background: rgba(0,0,0,0.65);
+  padding: 10px 18px;
 }
 
 .glightbox-clean .gslide-title {
-  color: #fff;
-  font-size: 0.88rem;
-  font-weight: 500;
-  margin: 0;
-  text-align: left;
+  color: #fff !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
 }
 
 .glightbox-clean .gslide-desc {
-  display: none;
+  display: none !important;
 }
 /* ============================================================
    14. AWARDS
