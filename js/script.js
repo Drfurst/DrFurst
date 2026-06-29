@@ -215,7 +215,7 @@ $(document).ready(function() {
   });
 });
 
-/* ── 8. Nav active state on scroll ── */
+
 /* ── 8. Nav active state on scroll ── */
 (function () {
   var sections = document.querySelectorAll('section[id]');
@@ -279,10 +279,6 @@ $(document).ready(function() {
 
 /* ── 9. GLightbox init ── */
 document.addEventListener('DOMContentLoaded', function () {
-
-  var gallerySection = document.querySelector('#gallery');
-  if (gallerySection) gallerySection.removeAttribute('aria-hidden');
-
   var lightbox = GLightbox({
     selector: '.glightbox',
     touchNavigation: true,
@@ -292,71 +288,9 @@ document.addEventListener('DOMContentLoaded', function () {
     descPosition: 'bottom',
   });
 
-  function injectCaption(slide) {
-    // Remove any existing injected caption
-    var existing = document.querySelector('.gl-injected-caption');
-    if (existing) existing.remove();
-
-    var title = slide.querySelector('[data-description]');
-    if (!title) {
-      // find the active glightbox anchor
-      var activeEl = document.querySelector('.glightbox.current') || slide;
-      title = activeEl;
-    }
-
-    // Get caption from the original anchor tag
-    var anchors = document.querySelectorAll('a.glightbox');
-    var currentSrc = slide.querySelector('img') ? slide.querySelector('img').src : '';
-    var caption = '';
-
-    anchors.forEach(function(a) {
-      if (a.href && currentSrc.includes(a.getAttribute('href').split('/').pop())) {
-        caption = a.getAttribute('data-description') || '';
-      }
-    });
-
-    if (!caption) return;
-
-    var bar = document.createElement('div');
-    bar.className = 'gl-injected-caption';
-    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(0,0,0,0.65);color:#fff;font-size:0.88rem;font-weight:500;padding:10px 18px;backdrop-filter:blur(4px);';
-    bar.textContent = caption;
-    document.body.appendChild(bar);
-  }
-
-  lightbox.on('slide_before_change', function({ prev, current }) {
-    var existing = document.querySelector('.gl-injected-caption');
-    if (existing) existing.remove();
-  });
-
-  lightbox.on('slide_changed', function({ prev, current }) {
-    injectCaption(current.slideConfig ? current.slideNode : current);
-  });
-
-  lightbox.on('open', function() {
-    setTimeout(function() {
-      var activeSlide = document.querySelector('.gslide.current');
-      if (activeSlide) injectCaption(activeSlide);
-    }, 100);
-  });
-
-  lightbox.on('close', function() {
-    var existing = document.querySelector('.gl-injected-caption');
-    if (existing) existing.remove();
-  });
-
   document.querySelectorAll('.gallery-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
       setTimeout(function () { lightbox.reload(); }, 350);
     });
   });
 });
-
-
-/* Fix: Slick keeps adding aria-hidden to gallery section — strip it repeatedly */
-  function fixGalleryAria() {
-    var el = document.querySelector('#gallery');
-    if (el) el.removeAttribute('aria-hidden');
-  }
-  fixGalleryAria();
-  setInterval(fixGalleryAria, 500);
