@@ -276,9 +276,14 @@ $(document).ready(function() {
   onScroll();
 }());
 
-/* ── 9. GLightbox init ── */
+
 /* ── 9. GLightbox init ── */
 document.addEventListener('DOMContentLoaded', function () {
+
+  // Remove aria-hidden from gallery section so GLightbox can focus
+  var gallerySection = document.querySelector('#gallery');
+  if (gallerySection) gallerySection.removeAttribute('aria-hidden');
+
   var lightbox = GLightbox({
     selector: '.glightbox',
     touchNavigation: true,
