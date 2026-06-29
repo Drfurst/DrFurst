@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loop: true,
     closeButton: true,
     keyboardNavigation: true,
-    descPosition: 'top',
+    descPosition: 'bottom',
   });
 
   document.querySelectorAll('.gallery-tab').forEach(function (tab) {
