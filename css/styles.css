@@ -1288,6 +1288,7 @@ h4.eyebrow {
 .pswp__img,
 .gslide-image img {
   max-height: 80vh !important;
+  height: 80vh !important;
   width: auto !important;
   object-fit: contain !important;
 }
