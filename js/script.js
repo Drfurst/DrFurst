@@ -351,3 +351,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+/* Fix: Slick keeps adding aria-hidden to gallery section — strip it repeatedly */
+  function fixGalleryAria() {
+    var el = document.querySelector('#gallery');
+    if (el) el.removeAttribute('aria-hidden');
+  }
+  fixGalleryAria();
+  setInterval(fixGalleryAria, 500);
