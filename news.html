@@ -64,17 +64,14 @@
         .pub-info { flex: 1; }
         .pub-info h3 { font-size: 0.97rem; font-weight: 600; color: #211f1b; margin-bottom: 2px; }
         .pub-info p  { font-size: 0.82rem; color: #888; margin: 0; }
-        .link-btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: #1c79a2; color: #fff;
-            border: none; border-radius: 8px; padding: 10px 18px;
-            font-size: 0.85rem; font-weight: 600; white-space: nowrap;
-            cursor: pointer; text-decoration: none; transition: background .2s;
+        .pub-card .link-btn, .pub-list .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
         .link-btn:hover { background: #155f82; }
         .btn-icon {
             width: 20px; height: 20px;
-            margin-left: 14px;
             filter: brightness(0) invert(1);
             flex-shrink: 0;
         }
