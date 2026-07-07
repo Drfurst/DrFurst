@@ -75,6 +75,18 @@
         }
         .link-btn:hover { background: #155f82; }
 
+        /* ── Scoped override: turn on flex so gap works for icon+text buttons ── */
+        .pub-card .link-btn, .pub-list .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-icon {
+            width: 20px; height: 20px;
+            filter: brightness(0) invert(1);
+            flex-shrink: 0;
+        }
+
         /* ── Undated section ── */
         .undated-label { color: #888; border-color: #e0e0d8; }
         .undated-label span.count { background: #f0f0ea; color: #888; }
@@ -85,7 +97,7 @@
         @media (max-width: 600px) {
             .pub-card { flex-wrap: wrap; gap: 12px; }
             .pub-year  { min-width: auto; }
-            .link-btn  { width: 100%; text-align: center; }
+            .link-btn  { width: 100%; text-align: center; justify-content: center; }
         }
     </style>
 </head>
@@ -136,7 +148,7 @@
                 <h3>Dr. Furst — More Honors</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1975 Counselor Dr Furst- More honors.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1975 Counselor Dr Furst- More honors.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -145,7 +157,7 @@
                 <h3>Internationally Known Nutrition Expert Joins Neo-Life</h3>
                 <p>The Neo-Life National</p>
             </div>
-            <a href="assets/articles/1976 The Neo-Life National Internationally known nutrition expert joins Neo-Life.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1976 The Neo-Life National Internationally known nutrition expert joins Neo-Life.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -154,7 +166,7 @@
                 <h3>Internationally Known Nutrition Expert Joins NL (Article)</h3>
                 <p>The Neo-Life National</p>
             </div>
-            <a href="assets/articles/1976 The Neo-Life National article Internationally known nutrition expert joins NL.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1976 The Neo-Life National article Internationally known nutrition expert joins NL.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -163,7 +175,7 @@
                 <h3>Dr. Furst at Special Symposium</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1978 Counselor Dr. Furst at special symposium.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1978 Counselor Dr. Furst at special symposium.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -172,7 +184,7 @@
                 <h3>Neo-Life's Director of Research Wins Award</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1978 Counselor Neo-Lifes Director of Research wins award.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1978 Counselor Neo-Lifes Director of Research wins award.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -181,7 +193,7 @@
                 <h3>Dr. Furst at Special Symposium (Article)</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1978 Counselor article Dr. Furst at special symposium.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1978 Counselor article Dr. Furst at special symposium.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -190,7 +202,7 @@
                 <h3>Neo-Life Magazine Feature on Arthur Furst</h3>
                 <p>Neo-Life Magazine</p>
             </div>
-            <a href="assets/articles/1978 Neo-Life Magazine about AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1978 Neo-Life Magazine about AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -199,7 +211,7 @@
                 <h3>An Introduction to Arthur Furst</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1979 Counselor An Introduction to AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1979 Counselor An Introduction to AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -208,7 +220,7 @@
                 <h3>SAB Article</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1979 Counselor SAB article.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1979 Counselor SAB article.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -217,7 +229,7 @@
                 <h3>Six for Success</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1979 Counselor Six for Success.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1979 Counselor Six for Success.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
     </div>
@@ -234,7 +246,7 @@
                 <h3>Toxgard Returns — With Brand-New and Improved Formula</h3>
                 <p>The Counselor, December</p>
             </div>
-            <a href="assets/articles/1980 Counselor Dec Toxgard returns--with brand-new and improved formula.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1980 Counselor Dec Toxgard returns--with brand-new and improved formula.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -243,7 +255,7 @@
                 <h3>Successful Selling</h3>
                 <p>The Counselor, January</p>
             </div>
-            <a href="assets/articles/1980 Counselor Jan Successful Selling.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1980 Counselor Jan Successful Selling.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -252,7 +264,7 @@
                 <h3>Dr. Furst Honored</h3>
                 <p>The Counselor, July</p>
             </div>
-            <a href="assets/articles/1980 Counselor July Dr. Furst honored.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1980 Counselor July Dr. Furst honored.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -261,7 +273,7 @@
                 <h3>As I See It</h3>
                 <p>The Counselor, March</p>
             </div>
-            <a href="assets/articles/1980 Counselor Mar As I See It.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1980 Counselor Mar As I See It.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -270,7 +282,7 @@
                 <h3>Technical Notes by Dr. Arthur Furst</h3>
                 <p>The Counselor, November</p>
             </div>
-            <a href="assets/articles/1980 Counselor Nov Technical Notes by Dr AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1980 Counselor Nov Technical Notes by Dr AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -279,7 +291,7 @@
                 <h3>Editorial</h3>
                 <p>The Counselor, October</p>
             </div>
-            <a href="assets/articles/1980 Counselor Oct Editorial.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1980 Counselor Oct Editorial.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -288,7 +300,7 @@
                 <h3>Keynote Address by Arthur Furst</h3>
                 <p>The Counselor, June</p>
             </div>
-            <a href="assets/articles/1981 Counselor (June) Keynote Addresses by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1981 Counselor (June) Keynote Addresses by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -297,7 +309,7 @@
                 <h3>NL Research: Meeting Today's Nutritional Needs with Tomorrow's Products</h3>
                 <p>The Counselor, January</p>
             </div>
-            <a href="assets/articles/1981 Counselor Jan NL research- meeting todays nutritional needs with tomorrows products.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1981 Counselor Jan NL research- meeting todays nutritional needs with tomorrows products.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -306,7 +318,7 @@
                 <h3>Article by Arthur Furst</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1982 Counselor AF article.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1982 Counselor AF article.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -315,7 +327,7 @@
                 <h3>Introduction to the Magazine by Arthur Furst</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1984 Counselor - intro to mag by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1984 Counselor - intro to mag by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -324,7 +336,7 @@
                 <h3>Distributor Training Flyer</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1985 Counselor - Distributor Training flyer.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1985 Counselor - Distributor Training flyer.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -333,7 +345,7 @@
                 <h3>SAB Articles by AF, K. Hirsch, F. Hooper</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1985 Counselor SAB articles by AF K Hirsch F Hooper.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1985 Counselor SAB articles by AF K Hirsch F Hooper.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -342,7 +354,7 @@
                 <h3>Founders Rallies Flyer</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/1985 Founders Rallies flyer.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1985 Founders Rallies flyer.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -351,7 +363,7 @@
                 <h3>Convention Speakers</h3>
                 <p>GNLD News, September</p>
             </div>
-            <a href="assets/articles/1985 GNLD News Sept - Convention speakers.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1985 GNLD News Sept - Convention speakers.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -360,7 +372,7 @@
                 <h3>Arthur Furst Receives Klaus Schwarz Commemorative Medal</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1986 Counselor - article AF receives Klaus Schwarz Commemorative Medal.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1986 Counselor - article AF receives Klaus Schwarz Commemorative Medal.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -369,7 +381,7 @@
                 <h3>Candida Albicans</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1986 Counselor Candida Albicans.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1986 Counselor Candida Albicans.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -378,7 +390,7 @@
                 <h3>Free Radicals and Oxidants — The Damaging Effects</h3>
                 <p>The Counselor, by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1986 Counselor Free Radicals and Oxidants--The Damaging Effects by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1986 Counselor Free Radicals and Oxidants--The Damaging Effects by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -387,7 +399,7 @@
                 <h3>Warning: Life on Earth Can Be Hazardous to Your Health (Betagard)</h3>
                 <p>GNLD Flyer</p>
             </div>
-            <a href="assets/articles/1986 Flyer Warning- Life on Earth Can be Hazardous to your Health regarding Betagard.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1986 Flyer Warning- Life on Earth Can be Hazardous to your Health regarding Betagard.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -396,7 +408,7 @@
                 <h3>Nutritional Protection of the Immune System &amp; Betagard Flyer</h3>
                 <p>Professional Nurses Quarterly</p>
             </div>
-            <a href="assets/articles/1986 Professional Nurses Quarterly - Betagard flyer & Nutritional Protection of the Immune System.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1986 Professional Nurses Quarterly - Betagard flyer & Nutritional Protection of the Immune System.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -405,7 +417,7 @@
                 <h3>Know Your Enemy: Cancer</h3>
                 <p>The Counselor, July — by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1987 Counselor July Know Your Enemy Cancer by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1987 Counselor July Know Your Enemy Cancer by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -414,7 +426,7 @@
                 <h3>Arthur Furst on Air Filtration</h3>
                 <p>The Counselor, Sept–Oct</p>
             </div>
-            <a href="assets/articles/1988 Counselor - AF on Air Filtration Sept Oct.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1988 Counselor - AF on Air Filtration Sept Oct.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -423,7 +435,7 @@
                 <h3>Problems with Water</h3>
                 <p>The Counselor, May–June — by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1988 Counselor May June Problems With Water by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1988 Counselor May June Problems With Water by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
     </div>
@@ -440,7 +452,7 @@
                 <h3>Beta Carotene</h3>
                 <p>The Counselor, July–Aug — by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1989 Counselor - Beta Carotene by AF July Aug.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1989 Counselor - Beta Carotene by AF July Aug.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -449,7 +461,7 @@
                 <h3>An Environmental Update</h3>
                 <p>The Counselor, May–June — by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1989 Counselor May June An Environmental Update by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1989 Counselor May June An Environmental Update by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -458,7 +470,7 @@
                 <h3>Arthur Furst Receiving Lifelong Contribution to the Betterment of Mankind Award</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1989 Counselor article AF receiving lifelong contribution to the betterment of mankind from Bob.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1989 Counselor article AF receiving lifelong contribution to the betterment of mankind from Bob.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -467,7 +479,7 @@
                 <h3>Article by Arthur Furst</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1989 Counselor article by AF.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1989 Counselor article by AF.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -476,7 +488,7 @@
                 <h3>One Man Can Make a Difference</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1990 Counselor One man can make a difference.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1990 Counselor One man can make a difference.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -485,7 +497,7 @@
                 <h3>Arthur Furst Quote from Convention</h3>
                 <p>The Counselor, Sept–Oct</p>
             </div>
-            <a href="assets/articles/1990 Counselor Sept Oct AF quote from convention.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1990 Counselor Sept Oct AF quote from convention.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -494,7 +506,7 @@
                 <h3>Translating Science into Choices for Your Health</h3>
                 <p>The Counselor</p>
             </div>
-            <a href="assets/articles/1990 Counselor Translating science into choices for your health.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1990 Counselor Translating science into choices for your health.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -503,7 +515,7 @@
                 <h3>Arthur Furst Article &amp; SAB</h3>
                 <p>The Counselor, Jan–Feb</p>
             </div>
-            <a href="assets/articles/1990 Jan-Feb Counselor AF article & SAB.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1990 Jan-Feb Counselor AF article & SAB.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -512,7 +524,7 @@
                 <h3>Australia Counsellor</h3>
                 <p>Australia Counsellor, May–Jun</p>
             </div>
-            <a href="assets/articles/1990 Australia Counsellor May Jun.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1990 Australia Counsellor May Jun.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -521,7 +533,7 @@
                 <h3>Dr. Furst Honored at UCLA</h3>
                 <p>GNLD News, Jan–Feb</p>
             </div>
-            <a href="assets/articles/1992 GNLD News Dr AF honored at UCLA Jan Feb.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1992 GNLD News Dr AF honored at UCLA Jan Feb.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -530,7 +542,7 @@
                 <h3>Arthur Furst Accomplishments</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/1993 AF accomplishments.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1993 AF accomplishments.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -539,7 +551,7 @@
                 <h3>Neo-Life Magazine SAB Profile</h3>
                 <p>Neo-Life Magazine, Spring</p>
             </div>
-            <a href="assets/articles/1994 Neo-Life Mag AF SAB profile Spring.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1994 Neo-Life Mag AF SAB profile Spring.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -548,7 +560,7 @@
                 <h3>The Experts Discuss Immune Function</h3>
                 <p>Neo-Life Magazine — Article by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1995 Neo-Life Magazine The Experts Discuss Immune Function - AF article.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1995 Neo-Life Magazine The Experts Discuss Immune Function - AF article.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -557,7 +569,7 @@
                 <h3>SAB Discussion on Immune System</h3>
                 <p>Neo-Life Magazine, Fall</p>
             </div>
-            <a href="assets/articles/1995 Neo-Life Magazine SAB discussion on Immune System Fall.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1995 Neo-Life Magazine SAB discussion on Immune System Fall.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -566,7 +578,7 @@
                 <h3>SAB &amp; Global Science Network Pamphlet</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/1995 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1995 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -575,7 +587,7 @@
                 <h3>Phytonutrients — Spring Feature</h3>
                 <p>Lifestyle, by Arthur Furst</p>
             </div>
-            <a href="assets/articles/1996 Lifestyle AF Phytonutrients Spring.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1996 Lifestyle AF Phytonutrients Spring.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -584,7 +596,7 @@
                 <h3>Cancer Growth Inhibited 90% by GNLD Flavonoids</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/1996 Lifestyle Cancer Growth Inhibited 90% by GNLD Flavonoids.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1996 Lifestyle Cancer Growth Inhibited 90% by GNLD Flavonoids.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -593,7 +605,7 @@
                 <h3>The Science Behind Our Products Just Expanded</h3>
                 <p>Neo-Life Magazine</p>
             </div>
-            <a href="assets/articles/1996 Neo-Life Magazine Science Behind Products Just Expanded.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1996 Neo-Life Magazine Science Behind Products Just Expanded.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -602,7 +614,7 @@
                 <h3>SAB Update</h3>
                 <p>GNLD News</p>
             </div>
-            <a href="assets/articles/1998 GNLD News SAB Update.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1998 GNLD News SAB Update.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -611,7 +623,7 @@
                 <h3>Phytonutrients and Antioxidants: Their Role in Anti-Aging and Cancer Prevention</h3>
                 <p>GNLD Lecture Program</p>
             </div>
-            <a href="assets/articles/1998 GNLD Phytonutrients and Antioxidants- Their Role in Anti-Aging and Cancer Prevention lecture program.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1998 GNLD Phytonutrients and Antioxidants- Their Role in Anti-Aging and Cancer Prevention lecture program.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -620,7 +632,7 @@
                 <h3>Arthur Furst Speaks at an Event</h3>
                 <p>Lifestyle, July–Aug–Sept</p>
             </div>
-            <a href="assets/articles/1998 Lifestyle AF speaks at an event July Aug Sept.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1998 Lifestyle AF speaks at an event July Aug Sept.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -629,7 +641,7 @@
                 <h3>SAB &amp; Global Science Network Pamphlet</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/1998 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1998 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -638,7 +650,7 @@
                 <h3>Dr. Furst Published in Chemical Engineering News</h3>
                 <p>GNLD News</p>
             </div>
-            <a href="assets/articles/1999 GNLD News Dr AF published in Chemical Engineering News.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1999 GNLD News Dr AF published in Chemical Engineering News.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -647,7 +659,7 @@
                 <h3>SAB &amp; Global Science Network Pamphlet</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/1999 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/1999 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
     </div>
@@ -664,7 +676,7 @@
                 <h3>Lifestyle Feature — Arthur Furst</h3>
                 <p>Lifestyle, Apr–May–Jun</p>
             </div>
-            <a href="assets/articles/2000 Lifestyle AF Apr May Jun.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2000 Lifestyle AF Apr May Jun.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -673,7 +685,7 @@
                 <h3>Arthur Furst's Farewell Letter</h3>
                 <p>Lifestyle, Apr–May–Jun</p>
             </div>
-            <a href="assets/articles/2000 Lifestyle AF Farewell Letter Apr May Jun.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2000 Lifestyle AF Farewell Letter Apr May Jun.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -682,7 +694,7 @@
                 <h3>Celebrating Dr. Arthur Furst</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/2000 Lifestyle Celebrating Dr. AF b&w scan.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2000 Lifestyle Celebrating Dr. AF b&w scan.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -691,7 +703,7 @@
                 <h3>Breaking News</h3>
                 <p>GNLD News</p>
             </div>
-            <a href="assets/articles/2001 GNLD News Breaking News.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2001 GNLD News Breaking News.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -700,7 +712,7 @@
                 <h3>Stanford &amp; SAB Unite</h3>
                 <p>GNLD News</p>
             </div>
-            <a href="assets/articles/2002 GNLD News Stanford & SAB unite.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2002 GNLD News Stanford & SAB unite.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -709,7 +721,7 @@
                 <h3>Arthur Furst, GNLD &amp; SAB Work Together</h3>
                 <p>Lifestyle, Jul–Aug–Sept</p>
             </div>
-            <a href="assets/articles/2002 Lifestyle - AF GNLD & SAB work together Jul Aug Sept.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2002 Lifestyle - AF GNLD & SAB work together Jul Aug Sept.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -718,7 +730,7 @@
                 <h3>SAB Feature</h3>
                 <p>Lifestyle, Winter — Jan–Feb–Mar</p>
             </div>
-            <a href="assets/articles/2002 Lifestyle Winter Jan Feb Mar SAB.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2002 Lifestyle Winter Jan Feb Mar SAB.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -727,7 +739,7 @@
                 <h3>SAB Issue 3</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/2003 Lifestyle SAB Issue 3.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2003 Lifestyle SAB Issue 3.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -736,7 +748,7 @@
                 <h3>SAB &amp; Global Science Network Pamphlet</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/2003 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2003 SAB & Global Science Network pamplet.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -745,7 +757,7 @@
                 <h3>SAB &amp; Stanford — Summer</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/2004 Lifestyle Summer SAB & Stanford.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2004 Lifestyle Summer SAB & Stanford.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -754,7 +766,7 @@
                 <h3>SAB &amp; Stanford — Summer</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/2005 Lifestyle Summer SAB & Stanford.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2005 Lifestyle Summer SAB & Stanford.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -763,7 +775,7 @@
                 <h3>SAB &amp; Global Science Network Pamphlet</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/2005 SAB & Global Science Network pamphlet.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2005 SAB & Global Science Network pamphlet.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -772,7 +784,7 @@
                 <h3>SAB Feature</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/2005 SAB.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2005 SAB.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -781,7 +793,7 @@
                 <h3>In Memory of Arthur Furst</h3>
                 <p>GNLD News, Winter</p>
             </div>
-            <a href="assets/articles/2006 GNLD News In Memory of AF Winter.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/2006 GNLD News In Memory of AF Winter.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -790,7 +802,7 @@
                 <h3>What the Experts Are Saying about Vitality Aloe Vera Plus</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/Lifestyle What the Experts are Saying about Vitality Aloe Vera Plus.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/Lifestyle What the Experts are Saying about Vitality Aloe Vera Plus.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
     </div>
@@ -807,7 +819,7 @@
                 <h3>GNLD SAB Science Article</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/GNLD SAB Science article.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/GNLD SAB Science article.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -816,7 +828,7 @@
                 <h3>Global Science Network SAB Article</h3>
                 <p>GNLD</p>
             </div>
-            <a href="assets/articles/Global Science Network SAB article.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/Global Science Network SAB article.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -825,7 +837,7 @@
                 <h3>In Memory of Dr. Arthur Furst</h3>
                 <p>Memorial Flyer</p>
             </div>
-            <a href="assets/articles/In Memory of Dr AF flyer.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/In Memory of Dr AF flyer.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
         <div class="pub-card">
@@ -834,7 +846,7 @@
                 <h3>What the Experts Are Saying about Vitality Aloe Vera Plus</h3>
                 <p>Lifestyle</p>
             </div>
-            <a href="assets/articles/Lifestyle What the Experts are Saying about Vitality Aloe Vera Plus.pdf" target="_blank" class="link-btn">View PDF</a>
+            <a href="assets/articles/Lifestyle What the Experts are Saying about Vitality Aloe Vera Plus.pdf" target="_blank" class="link-btn">View Article<img src="assets/images/SVG's/file-pdf-sharp-light-full.svg" alt="" class="btn-icon"></a>
         </div>
 
     </div>
