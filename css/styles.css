@@ -839,7 +839,17 @@ h4.eyebrow {
   }
 }
 
-
+.scholar-year {
+  display: inline-block;
+  background: #1c79a2;
+  color: #f5f5f0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
 /* ============================================================
    11. PUBLICATIONS
    ============================================================ */
