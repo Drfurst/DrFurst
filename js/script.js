@@ -235,7 +235,7 @@ $(document).ready(function() {
         link.scrollIntoView({
           behavior: 'smooth',
           block: 'nearest',
-          inline: 'center'
+          inline: 'start'
         });
       }
     });
