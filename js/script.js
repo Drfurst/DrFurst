@@ -229,10 +229,14 @@ $(document).ready(function() {
     navLinks.forEach(function (link) {
       link.classList.remove('nav-active');
       var href = link.getAttribute('href');
-      if (current === '' && href === '#') {
+      var isMatch = (current === '' && href === '#') || (href === '#' + current);
+      if (isMatch) {
         link.classList.add('nav-active');
-      } else if (href === '#' + current) {
-        link.classList.add('nav-active');
+        link.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
       }
     });
   }
@@ -275,7 +279,6 @@ $(document).ready(function() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 }());
-
 
 /* ── 9. GLightbox init ── */
 document.addEventListener('DOMContentLoaded', function () {
