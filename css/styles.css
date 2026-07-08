@@ -425,10 +425,18 @@ h4.eyebrow {
   font-weight: 600;
   white-space: nowrap;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
   transition: background 0.2s;
   margin-top: 0;
+}
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
 }
 
 .pub-card .link-btn:hover,
