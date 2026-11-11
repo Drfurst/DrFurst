@@ -697,12 +697,12 @@ h4.eyebrow {
 }
 
 .timeline-photo {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 360px;
   border-radius: 10px;
-  margin-top: 16px;
-  object-fit: cover;
-  object-position: top center;
-  max-height: 250px;
+  margin: 16px auto 0;
   display: block;
 }
 /* ============================================================
